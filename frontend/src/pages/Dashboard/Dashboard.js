@@ -1,14 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 
 function Dashboard() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Dashboard
-      <p>
-        <Link></Link>
-      </p>
-    </h1>
+    <div>
+      <DashboardContainer />
+    </div>
   );
 }
 
