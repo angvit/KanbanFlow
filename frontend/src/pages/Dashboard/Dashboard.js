@@ -3,8 +3,10 @@ import DashboardContainer from "../../components/DashboardContainer/DashboardCon
 
 function Dashboard() {
   return (
-    <div>
-      <DashboardContainer />
+    <div className="flex">
+      <DashboardContainer title="To do" />
+      <DashboardContainer title="Doing" />
+      <DashboardContainer title="Done" />
     </div>
   );
 }
