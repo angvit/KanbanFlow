@@ -8,21 +8,37 @@ function TaskCard(props) {
           className="h-full w-full btn btn-neutral"
           onClick={() => document.getElementById("my_modal_1").showModal()}
         >
-          <div className="card-body">
-            <h2 className="card-title">{props.title}</h2>
-            <p className="card-title text-lg">{props.task}</p>
+          <div className="card-body flex flex-col px-3">
+            <h2 className="card-title text-left ">{props.title}</h2>
+            <p className="card-title font-normal text-lg text-left">
+              {props.task}
+            </p>
           </div>
         </button>
       </div>
+
       <dialog id="my_modal_1" className="modal">
-        <div className="modal-box w-full h-full">
+        <div className="modal-box w-screen max-w-3xl h-full">
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
+            <button className="btn btn-neutral absolute right-5 bottom-5">
+              Save Changes
+            </button>
           </form>
-          <h3 className="font-bold text-lg">Placeholder For Task Editor</h3>
-          <p className="py-4">Placeholder for Task Editor options</p>
+          <h1 className="font-bold text-3xl pb-5">{props.title}</h1>
+          <h1 className="py-2 text-xl">Edit Task Title</h1>
+          <input
+            type="text"
+            placeholder="Edit Task Title Here..."
+            className="input input-lg input-bordered w-full"
+          />
+          <h1 className="py-2 text-xl">Edit Task Description</h1>
+          <textarea
+            className="textarea textarea-lg textarea-bordered w-full h-24 resize-none	"
+            placeholder="Edit Task Description Here..."
+          ></textarea>
         </div>
       </dialog>
     </>
