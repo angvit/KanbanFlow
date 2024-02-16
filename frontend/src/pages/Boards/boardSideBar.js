@@ -54,7 +54,7 @@ export function boardSideBar() {
 
 const styles = {
     nav: {
-        position: sticky,
+        position: 'sticky',
         maxHeight: '90%',
         marginTop: 40,
         paddingLeft: 10,
