@@ -1,9 +1,22 @@
 import React from "react";
 
 function TaskCard(props) {
+  const handleDragStart = (event) => {
+    const taskData = {
+      id: props.id,
+      title: props.title,
+      task: props.task,
+    };
+    event.dataTransfer.setData("application/json", JSON.stringify(taskData));
+  };
+
   return (
     <>
-      <div className="card bg-base-200">
+      <div
+        className="card bg-base-200"
+        draggable="true"
+        onDragStart={handleDragStart}
+      >
         <button
           className="h-full w-full btn btn-neutral"
           onClick={() =>
