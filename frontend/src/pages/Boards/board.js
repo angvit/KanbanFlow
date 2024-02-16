@@ -1,6 +1,6 @@
 import React from 'react';
-import boardSideBar from './BoardSideBar';
-import boardMidContent from './BoardMidContent';
+import BoardSideBar from './BoardSideBar';
+import BoardMidContent from './BoardMidContent';
 
 export default function Board(){
     return (
@@ -10,10 +10,10 @@ export default function Board(){
                     <main className='content-boundary'>
                         <div className='content-wrapper' style={{display:"flex", flexDirection: "column", overflowY: "scroll"}}>
                             <div className='left-side-content'>
-                                <boardSideBar/>
+                                <BoardSideBar/>
                             </div>
                             <div className='middle-content'>
-                                <boardMidContent/>
+                                <BoardMidContent/>
                             </div>
                         </div>
                     </main>

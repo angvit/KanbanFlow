@@ -1,9 +1,9 @@
 import React from 'react';
-import boardCard from '../../components/BoardCard/BoardCard';
+import BoardCard from '../../components/BoardCard/BoardCard';
 import Workspace from './Workspace';
 
 
-export default function boardMidContent() {
+export default function BoardMidContent() {
     return (
         <div>
             <div className='recent-view'>

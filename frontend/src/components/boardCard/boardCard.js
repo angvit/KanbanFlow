@@ -1,6 +1,6 @@
 import React from 'react';
 
-const boardCard = () => {
+const BoardCard = () => {
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -12,4 +12,4 @@ const boardCard = () => {
     )
 }
 
-export default boardCard;
+export default BoardCard;

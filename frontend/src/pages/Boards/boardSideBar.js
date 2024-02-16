@@ -1,10 +1,11 @@
 import React from 'react'
+import './Board.css'
 
-export default function boardSideBar() {
+export default function BoardSideBar() {
     return (
         <div>
             <div>
-                <nav className='board-left-sidebar' style={styles.nav}>
+                <nav className='board-left-sidebar'>
                     <ul className="menu bg-base-200 w-56 rounded-box border-b-2">
                         <li><a>Boards</a></li>
                         <li><a>Templates</a></li>
@@ -52,12 +53,4 @@ export default function boardSideBar() {
     )
 }
 
-const styles = {
-    nav: {
-        position: 'sticky',
-        maxHeight: '90%',
-        marginTop: 40,
-        paddingLeft: 10,
-        paddingRight: 10
-    }
-}
+
