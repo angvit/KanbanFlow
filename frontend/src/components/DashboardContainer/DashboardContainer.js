@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TaskCard from "../../components/TaskCard/TaskCard";
 
 function DashboardContainer(props) {
-  const counter = 3;
+  const [counter, setCounter] = useState(3);
   // THIS IS JUST A PLACEHOLDER FOR NOW UNTIL WE GET THE DATA FROM THE BACKEND
   const [Tasks, setTasks] = useState([
     { title: "Task 1", task: "Do something", id: 1 },
@@ -16,11 +16,11 @@ function DashboardContainer(props) {
   ]);
 
   const addCard = () => {
-    console.log("Add a card");
+    setCounter(counter + 1);
     const newTask = {
-      title: "Task 3",
+      title: `Task ${counter}`,
       task: "Do something else",
-      id: counter + 1,
+      id: counter,
     };
     setTasks([...Tasks, newTask]);
   };
@@ -33,7 +33,12 @@ function DashboardContainer(props) {
             {props.title}
           </h2>
           {Tasks.map((task, index) => (
-            <TaskCard title={task.title} task={task.task} id={task.id} key={index} />
+            <TaskCard
+              title={task.title}
+              task={task.task}
+              id={task.id}
+              key={index}
+            />
           ))}
           {/* Place holder cards WILL REMOVE LATER */}
           <button className="btn btn-ghost card-title mt-5" onClick={addCard}>

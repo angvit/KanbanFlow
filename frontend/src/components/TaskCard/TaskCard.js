@@ -6,7 +6,9 @@ function TaskCard(props) {
       <div className="card bg-base-200">
         <button
           className="h-full w-full btn btn-neutral"
-          onClick={() => document.getElementById(`my_modal_${props.id}`).showModal()}
+          onClick={() =>
+            document.getElementById(`my_modal_${props.id}`).showModal()
+          }
         >
           <div className="card-body flex flex-col px-3">
             <h2 className="card-title text-left ">{props.title}</h2>
