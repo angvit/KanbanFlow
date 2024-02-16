@@ -38,7 +38,7 @@ function TaskCard(props) {
           />
           <h1 className="py-2 text-xl">Edit Task Description</h1>
           <textarea
-            className="textarea textarea-lg textarea-bordered w-full h-24 resize-none	"
+            className="textarea textarea-lg textarea-bordered w-full h-48 resize-none	"
             placeholder="Edit Task Description Here..."
           ></textarea>
         </div>

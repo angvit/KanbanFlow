@@ -10,7 +10,8 @@ function App() {
   return (
     <div className="App">
       <Rounter>
-        <Navbar />
+        {/* <Navbar /> */}
+        {/* Moving Nav just to dash board for now */}
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<Dashboard />} path="/dashboard" />

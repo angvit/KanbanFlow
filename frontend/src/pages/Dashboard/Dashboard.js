@@ -1,5 +1,6 @@
 import React from "react";
 import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
+import Navbar from "../../components/Navbar/Navbar";
 
 function Dashboard() {
   return (
@@ -7,6 +8,7 @@ function Dashboard() {
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content items-center justify-center">
+          <Navbar />
           <div className="flex">
             <DashboardContainer title="To do" />
             <DashboardContainer title="Doing" />
