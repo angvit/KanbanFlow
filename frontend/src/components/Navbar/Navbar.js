@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-300 h-5">
+    <div className="navbar bg-base-300 h-5 sticky top-0 z-10">
       <div className="flex-1">
         <Link to="/" className="btn mr-1 btn-ghost text-lg">
           KanbanFlow Clone
@@ -43,9 +43,7 @@ function Navbar() {
               <h1 className="justify-between">Profile</h1>
             </li>
             <li>
-              <Link to="/login">
-                Logout
-              </Link>
+              <Link to="/login">Logout</Link>
             </li>
           </ul>
         </div>
