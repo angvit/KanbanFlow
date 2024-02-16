@@ -1,8 +1,14 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import Board from "./board";
 
 function Dashboard() {
-  return <h1 className="text-3xl font-bold underline">Dashboard</h1>;
+  return (
+    <div>
+      <Navbar/>
+      <Board/>
+    </div>
+  )
 }
 
 export default Dashboard;
