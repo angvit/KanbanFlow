@@ -1,10 +1,11 @@
 import React from "react";
-import boardCard from "../../components/boardCard/boardCard";
+import BoardCard from "../../components/BoardCard/BoardCard";
+import "./Board.css";
 
 export default function Workspace() {
   return (
     <div className="workspaces">
-      <h3>Your Workspaces</h3>
+      <h3 className="boards-page-section-header-name">YOUR WORKSPACES</h3>
       <div>
         <div>
           <div>
@@ -14,7 +15,7 @@ export default function Workspace() {
         <div>
           <ul className="board-section-list">
             <li className="boardCard">
-              <boardCard />
+              <BoardCard />
             </li>
           </ul>
         </div>
@@ -28,7 +29,7 @@ export default function Workspace() {
         <div>
           <ul className="board-section-list">
             <li className="boardCard">
-              <boardCard />
+              <BoardCard />
             </li>
           </ul>
         </div>
