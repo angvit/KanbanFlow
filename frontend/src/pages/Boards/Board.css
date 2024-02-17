@@ -74,7 +74,6 @@ nav {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-<<<<<<< HEAD
 
 .board-section-header-name {
   display: inline-block;
@@ -93,12 +92,9 @@ nav {
 }
 
 .card-body {
-=======
-/* .card-body {
->>>>>>> 447f1347cc9fe2068ca9a06545bf9f5ce4c74800
   align-items: center;
   vertical-align: middle;
-} */
+}
 
 .board-left-sidebar-workspaces {
   display: block;
