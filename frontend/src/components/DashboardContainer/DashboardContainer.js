@@ -95,7 +95,7 @@ function DashboardContainer(props) {
               </button>
               <button
                 onClick={() => setInput(false)}
-                className="btn btn-error card-title mt-5 w-full text-2xl"
+                className="btn btn-error card-title mt-2 w-full text-2xl"
               >
                 Cancel
               </button>
