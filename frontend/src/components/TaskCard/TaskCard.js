@@ -13,7 +13,7 @@ function TaskCard(props) {
   return (
     <>
       <div
-        className="card bg-base-200"
+        className="card bg-base-200 w-full"
         draggable="true"
         onDragStart={handleDragStart}
       >

@@ -1,5 +1,5 @@
 import React from "react";
-import BoardCard from "../../components/BoardCard/BoardCard";
+import BoardCard from "../../components/BoardCard/boardCard";
 import "./Board.css";
 
 
