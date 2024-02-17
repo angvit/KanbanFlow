@@ -24,13 +24,13 @@ export default function BoardSideBar() {
                             <div className="collapse collapse-arrow bg-base-200 workspace-accordion-option">
                                 <input type="radio" name="my-accordion-2" checked="checked" />
                                 <div className="collapse-title text-sm">
-                                    Workspace Name #1
+                                    Workspace Name
                                 </div>
                             </div>
                             <div className="collapse collapse-arrow bg-base-200 workspace-accordion-option">
                                 <input type="radio" name="my-accordion-2" />
                                 <div className="collapse-title text-sm">
-                                    Workspace Name #2
+                                    Workspace Name
                                 </div>
                             </div>
                         </div>

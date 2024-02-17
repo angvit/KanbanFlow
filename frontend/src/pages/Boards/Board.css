@@ -18,12 +18,35 @@ nav {
   width: 100%;
 }
 
-.all-boards .boards-page-board-section-header-name {
+.all-boards .boards-page-board-section {
   padding: 0 0 20px;
 }
 
 .board-card {
   display: flex;
+}
+
+.board-section-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.board-section-list-item {
+  margin: 0 4% 4% 0;
+  padding: 0%;
+  width: 25%;
+}
+
+.boards-page-board-section {
+  max-width: 1266px;
+}
+
+.boards-page-board-section-header {
+  display: flex;
+  margin: 0 0 0 40px;
+  padding: 0 0 11px;
+  position: relative;
 }
 
 .boards-page-board-section-list {
@@ -51,6 +74,23 @@ nav {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.board-section-header-name {
+  display: inline-block;
+  flex: 1;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 3px 0 0;
+  overflow: hidden;
+}
+
+.board-section-header-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+
 .card-body {
   align-items: center;
   vertical-align: middle;
@@ -107,23 +147,30 @@ nav {
 .workspaces-title-flex {
   border-top: 0.5px solid #b6c2cf;
   display: flex;
+  margin-top: 3px;
 }
 
 .workspaces-title-wrapper {
-  align-items: baseline;
+  align-items: center;
   display: flex;
   height: 32px;
   justify-content: flex-start;
-  margin-bottom: 8px;
-  padding: 0 0 0 12px;
+  margin: 8px 8px;
+  padding: 0 0 0 5px;
 }
 
 .workspaces-title {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 16px;
   margin-top: 16px;
   flex: 1 1 auto;
   margin: 0;
   padding: 8px 0;
+}
+
+.workspace-option-btn {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 12px;
 }
