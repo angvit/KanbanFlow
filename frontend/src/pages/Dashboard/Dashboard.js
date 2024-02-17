@@ -8,7 +8,8 @@ function Dashboard() {
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content items-center justify-center">
-          <Navbar />
+          {/* <Navbar /> */}
+          {/* NEED TO FIX NAVBAR ISSUE */}
           <div className="flex">
             <DashboardContainer title="To do" />
             <DashboardContainer title="Doing" />
