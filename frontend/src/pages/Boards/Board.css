@@ -51,10 +51,10 @@ nav {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.card-body {
+/* .card-body {
   align-items: center;
   vertical-align: middle;
-}
+} */
 
 .board-left-sidebar-workspaces {
   display: block;
