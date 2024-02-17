@@ -1,6 +1,7 @@
 import React from "react";
-import BoardCard from "../../components/BoardCard/BoardCard";
-import './Board.css';
+import BoardCard from "../../components/BoardCard/boardCard";
+import "./Board.css";
+
 
 export default function Workspace() {
   return (

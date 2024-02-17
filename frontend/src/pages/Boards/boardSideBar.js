@@ -1,5 +1,5 @@
-import React from 'react'
-import './Board.css'
+import React from "react";
+import "./Board.css";
 
 export default function BoardSideBar() {
     return (
@@ -37,9 +37,6 @@ export default function BoardSideBar() {
                     </div>
                 </nav>
             </div>
-
         </div>
     )
 }
-
-
