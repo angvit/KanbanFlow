@@ -1,6 +1,7 @@
 import React from 'react';
 import BoardSideBar from './BoardSideBar';
 import BoardMidContent from './BoardMidContent';
+import './Board.css';
 
 export default function Board(){
     return (
@@ -8,11 +9,11 @@ export default function Board(){
             <div className='browser-container'>
                 <div className='surface'>
                     <main className='content-boundary'>
-                        <div className='content-wrapper' style={{display:"flex", flexDirection: "column", overflowY: "scroll"}}>
-                            <div className='left-side-content'>
+                        <div className='content-wrapper'>
+                            <div className='board-left-side-content'>
                                 <BoardSideBar/>
                             </div>
-                            <div className='middle-content'>
+                            <div className='board-middle-content'>
                                 <BoardMidContent/>
                             </div>
                         </div>
