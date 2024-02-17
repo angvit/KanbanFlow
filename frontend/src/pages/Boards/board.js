@@ -3,7 +3,7 @@ import BoardSideBar from './BoardSideBar';
 import BoardMidContent from './BoardMidContent';
 import './Board.css';
 
-export default function Board(){
+export default function Board() {
     return (
         <div className='kanban-root'>
             <div className='browser-container'>
@@ -11,10 +11,10 @@ export default function Board(){
                     <main className='content-boundary'>
                         <div className='content-wrapper'>
                             <div className='board-left-side-content'>
-                                <BoardSideBar/>
+                                <BoardSideBar />
                             </div>
                             <div className='board-middle-content'>
-                                <BoardMidContent/>
+                                <BoardMidContent />
                             </div>
                         </div>
                     </main>

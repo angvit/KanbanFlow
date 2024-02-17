@@ -4,7 +4,7 @@ import Workspace from './Workspace';
 import './Board.css';
 
 export default function BoardMidContent() {
-    return (
+  return (
         <div className='all-boards'>
             <div className='recent-view'>
                 <div><h3 className="boards-page-board-section-header-name">Recently viewed</h3></div>
@@ -15,15 +15,9 @@ export default function BoardMidContent() {
                     </ul>
                 </div>
             </div>
-            <Workspace/>
+            <div className='user-workspaces'>
+                <Workspace/>
+            </div>
         </div>
-        <div>
-          <div>
-            <BoardCard />
-          </div>
-        </div>
-      </div>
-      <Workspace />
-    </div>
   );
 }
