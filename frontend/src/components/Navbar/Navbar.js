@@ -8,6 +8,9 @@ function Navbar() {
         <Link to="/" className="btn mr-1 btn-ghost text-lg">
           KanbanFlow Clone
         </Link>
+        <Link to="/boards" className="btn mr-1 btn-ghost text-lg">
+          Boards
+        </Link>
         <Link to="/dashboard" className="btn mr-1 btn-ghost text-lg">
           Dashboard
         </Link>
