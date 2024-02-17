@@ -24,6 +24,11 @@
 
 .board-card {
   display: flex;
+  cursor: pointer;
+}
+
+.board-card-body {
+  text-align: center;
 }
 
 .board-section-list {
