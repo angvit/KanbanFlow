@@ -17,5 +17,13 @@ export default function BoardMidContent() {
             </div>
             <Workspace/>
         </div>
-    )
+        <div>
+          <div>
+            <BoardCard />
+          </div>
+        </div>
+      </div>
+      <Workspace />
+    </div>
+  );
 }
