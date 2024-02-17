@@ -20,6 +20,9 @@ export default function Board() {
                     </main>
                 </div>
             </div>
+          </main>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
