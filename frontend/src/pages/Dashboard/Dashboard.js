@@ -24,7 +24,7 @@ function Dashboard() {
         <div className="drawer-content items-center justify-center">
           {/* <Navbar /> */}
           {/* NEED TO FIX NAVBAR ISSUE */}
-          <div className="flex overflow-auto">
+          <div className="flex">
             {Containers.map((container, index) => (
               <DashboardContainer title={container} key={index} />
             ))}
