@@ -6,7 +6,7 @@ const BoardCard = () => {
     return (
         <div>
             <div className="card w-50 bg-base-200 shadow-lg board-card">
-                <div className="card-body">
+                <div className="board-card-body">
                     <h2 className="card-title">Untitled Board</h2>
                 </div>
             </div>

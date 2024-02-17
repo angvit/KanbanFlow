@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-nav {
+.board-left-sidebar-menu {
   position: sticky;
   max-height: 90%;
   margin-top: 40px;
@@ -91,7 +91,7 @@ nav {
   margin-left: 10px;
 }
 
-.card-body {
+.board-card-body {
   align-items: center;
   vertical-align: middle;
 }
