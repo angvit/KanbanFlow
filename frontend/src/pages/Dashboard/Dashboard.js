@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 import Navbar from "../../components/Navbar/Navbar";
 
 function Dashboard() {
+  const [Containers, setContainers] = useState(["To do", "Doing", "Done"]);
+  const [addContainer, setAddContainer] = useState(false);
+  const [containerTitle, setContainerTitle] = useState("");
+
+  const saveCard = (event) => {
+    if (containerTitle === "") {
+      alert("Please fill in all fields");
+      return;
+    }
+    setContainers([...Containers, containerTitle]);
+    setAddContainer(false);
+    setContainerTitle("");
+  };
+
   return (
     <>
       <div className="drawer lg:drawer-open">
@@ -10,10 +24,46 @@ function Dashboard() {
         <div className="drawer-content items-center justify-center">
           {/* <Navbar /> */}
           {/* NEED TO FIX NAVBAR ISSUE */}
-          <div className="flex">
-            <DashboardContainer title="To do" />
-            <DashboardContainer title="Doing" />
-            <DashboardContainer title="Done" />
+          <div className="flex overflow-auto">
+            {Containers.map((container, index) => (
+              <DashboardContainer title={container} key={index} />
+            ))}
+            {addContainer ? (
+              <div className="m-10 mr-20">
+                <input
+                  type="text"
+                  placeholder="Task Title"
+                  className="input input-bordered w-96 mb-2"
+                  onChange={(e) => setContainerTitle(e.target.value)}
+                />
+                <div className="flex flex-row">
+                  <button
+                    className="btn btn-primary card-title mt-2 w-48 text-2xl"
+                    onChange={(e) => {
+                      setContainerTitle(e.target.value);
+                    }}
+                    onClick={() => {
+                      saveCard();
+                    }}
+                  >
+                    Add List
+                  </button>
+                  <button
+                    onClick={() => setAddContainer(false)}
+                    className="btn btn-error card-title mt-2 w-48 text-2xl"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                className="btn btn-neutral m-10 mr-20 w-96"
+                onClick={() => setAddContainer(true)}
+              >
+                Add another list
+              </button>
+            )}
           </div>
         </div>
         <div className="drawer-side">
