@@ -1,5 +1,5 @@
 import React from "react";
-import boardCard from "../../components/boardCard/BoardCard";
+import boardCard from "../../components/boardCard/boardCard";
 
 export default function Workspace() {
   return (

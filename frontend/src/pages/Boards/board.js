@@ -1,6 +1,6 @@
 import React from 'react';
-import BoardSideBar from './BoardSideBar';
-import BoardMidContent from './BoardMidContent';
+import BoardSideBar from './boardSideBar';
+import BoardMidContent from './boardMidContent';
 
 export default function Board(){
     return (

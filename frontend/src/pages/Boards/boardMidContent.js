@@ -1,5 +1,5 @@
 import React from "react";
-import BoardCard from "../../components/boardCard/BoardCard";
+import BoardCard from "../../components/boardCard/boardCard";
 import Workspace from "./Workspace";
 
 export default function BoardMidContent() {
