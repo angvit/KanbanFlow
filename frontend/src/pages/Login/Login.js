@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import LoginButton from "../../components/Login/LoginButton";
+import LogoutButton from "../../components/Login/LogoutButton";
 
 function Login() {
   return (
-    <h1>Login</h1>
-  )
+    <div>
+      <h1>Login</h1>
+      <LoginButton />
+      <LogoutButton />
+    </div>
+  );
 }
 
-export default Login
+export default Login;
