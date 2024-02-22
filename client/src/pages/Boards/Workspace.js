@@ -1,38 +1,29 @@
 import React from "react";
-import BoardCard from "../../components/BoardCard/boardCard";
+import BoardCard from "../../components/BoardCard/BoardCard";
 import "./Board.css";
 
 
 export default function Workspace() {
   return (
     <div className="workspaces">
-      <h3 className="boards-page-section-header-name">YOUR WORKSPACES</h3>
       <div>
-        <div>
-          <div>
-            <h3>Workspace Name #1</h3>
+        <div className="boards-page-board-section mod-no-sidebar">
+          <div className="boards-page-board-section-header">
+            <h3 className="board-section-header-name">Workspace Name</h3>
+            <div className="board-section-header-options">
+              <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary workspace-option-btn">Boards</button>
+              <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary workspace-option-btn">Members</button>
+              <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary workspace-option-btn">Settings</button>
+            </div>
           </div>
-        </div>
-        <div>
-          <ul className="board-section-list">
-            <li className="boardCard">
-              <BoardCard />
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <div>
           <div>
-            <h3>Workspace Name #2</h3>
+            <ul className="board-section-list">
+              <li className="board-section-list-item">
+                <BoardCard />
+              </li>
+            </ul>
           </div>
-        </div>
-        <div>
-          <ul className="board-section-list">
-            <li className="boardCard">
-              <BoardCard />
-            </li>
-          </ul>
+
         </div>
       </div>
     </div>
