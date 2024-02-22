@@ -5,8 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+const domain = process.env.REACT_APP_AUTHO_DOMAIN;
+const clientId = process.env.REACT_APP_AUTHO_CLIENT_ID;
 
 console.log(domain, clientId);
 
@@ -18,7 +18,6 @@ root.render(
       clientId={clientId}
       authorizationParams={{
         redirect_uri: window.location.origin,
-        initiate_login_uri: "https://localhost:3000/login",
       }}
     >
       <App />

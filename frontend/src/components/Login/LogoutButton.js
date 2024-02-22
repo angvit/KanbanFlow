@@ -10,7 +10,6 @@ function LogoutButton() {
         <button
           className="btn"
           onClick={() => logout()}
-          disabled={isAuthenticated}
         >
           Log Out
         </button>
