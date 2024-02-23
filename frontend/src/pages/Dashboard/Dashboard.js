@@ -69,7 +69,7 @@ function Dashboard() {
           </div>
         </div>
         <div className="drawer-side">
-          <ul className="menu p-4 w-72 min-h-full bg-base-200 text-base-content">
+          <ul className="menu p-4 w-64 min-h-full bg-base-200 text-base-content">
             <li>
               <button className="btn btn-ghost justify-start text-lg">
                 Boards

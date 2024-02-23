@@ -12,24 +12,24 @@ function Navbar() {
       {!isAuthenticated ? (
         <div className="navbar bg-base-300 sticky z-10 top-0">
           <div className="flex-1">
-            <Link to="/" className="btn mr-1 btn-ghost text-lg">
+            <Link to="/" className="btn mr-1 btn-ghost text-base">
               KanbanFlow Clone
             </Link>
             <button
               onClick={() => loginWithRedirect()}
-              className="btn mr-1 btn-ghost text-lg"
+              className="btn mr-1 btn-ghost text-base"
             >
               Boards
             </button>
             <button
               onClick={() => loginWithRedirect()}
-              className="btn mr-1 btn-ghost text-lg"
+              className="btn mr-1 btn-ghost text-base"
             >
               Dashboard
             </button>
             <button
               onClick={() => loginWithRedirect()}
-              className="btn mr-1 btn-primary text-lg"
+              className="btn mr-1 btn-primary text-base"
             >
               Create Board
             </button>
@@ -41,16 +41,16 @@ function Navbar() {
       ) : (
         <div className="navbar bg-base-300 sticky z-10 top-0">
           <div className="flex-1">
-            <Link to="/" className="btn mr-1 btn-ghost text-lg">
+            <Link to="/" className="btn mr-1 btn-ghost text-base">
               KanbanFlow Clone
             </Link>
-            <Link to="/boards" className="btn mr-1 btn-ghost text-lg">
+            <Link to="/boards" className="btn mr-1 btn-ghost text-base">
               Boards
             </Link>
-            <Link to="/dashboard" className="btn mr-1 btn-ghost text-lg">
+            <Link to="/dashboard" className="btn mr-1 btn-ghost text-base">
               Dashboard
             </Link>
-            <Link to="/" className="btn mr-1 btn-primary text-lg">
+            <Link to="/" className="btn mr-1 btn-primary text-base">
               Create Board
             </Link>
           </div>
