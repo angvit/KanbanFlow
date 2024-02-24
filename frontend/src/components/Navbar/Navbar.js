@@ -6,7 +6,7 @@ import LogoutButton from "../Login/LogoutButton";
 
 function Navbar() {
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
-
+  console.log(user);
   return (
     <>
       {!isAuthenticated ? (
@@ -68,10 +68,12 @@ function Navbar() {
                 className="btn btn-ghost btn-circle avatar"
               >
                 <div className="w-10 rounded-full">
-                  {user?.picture && (
+                  {user?.picture ? (
+                    <img alt="User Profile Picture" src={user.picture} />
+                  ) : (
                     <img
-                      alt="User Profile Picture"
-                      src={user.picture}
+                      alt="Default Profile Picture"
+                      src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
                     />
                   )}
                 </div>
