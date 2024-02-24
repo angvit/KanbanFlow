@@ -24,7 +24,7 @@ function DashboardContainer(props) {
     setInput(true);
   };
 
-  const saveCard = (event) => {
+  const saveCard = () => {
     if (taskTitle === "" || taskDescription === "") {
       alert("Please fill in all fields");
       return;
@@ -45,7 +45,7 @@ function DashboardContainer(props) {
     event.preventDefault();
     console.log(event.dataTransfer.getData("application/json"));
     const taskData = JSON.parse(event.dataTransfer.getData("application/json"));
-    setTasks([...tasks, taskData])
+    setTasks([...tasks, taskData]);
   };
 
   const handleDragOver = (event) => {
@@ -64,7 +64,7 @@ function DashboardContainer(props) {
             {props.title}
           </h2>
           {/* Place holder cards WILL REMOVE LATER */}
-          {tasks.map((task, index) => ( 
+          {tasks.map((task, index) => (
             <TaskCard
               title={task.title}
               task={task.task}
@@ -95,20 +95,19 @@ function DashboardContainer(props) {
               </button>
               <button
                 onClick={() => setInput(false)}
-                className="btn btn-error card-title mt-5 w-full text-2xl"
+                className="btn btn-error card-title mt-2 w-full text-2xl"
               >
                 Cancel
               </button>
             </div>
-          ) : null}
-          {!input ? (
+          ) : (
             <button
               className="btn btn-ghost card-title mt-5 text-2xl"
               onClick={addCard}
             >
               Add a Task
             </button>
-          ) : null}
+          )}
         </div>
       </div>
     </div>

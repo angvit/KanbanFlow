@@ -18,6 +18,23 @@
   width: 100%;
 }
 
+.accordion-option {
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  min-height: 24px;
+  padding: 4px 8px 4px 40px;
+}
+
+.accordion-option-text {
+  flex: 1 auto;
+  width: min-content;
+}
+
 .all-boards .boards-page-board-section {
   padding: 0 0 20px;
 }
@@ -140,13 +157,12 @@
   margin-bottom: 4px;
 }
 
-.workspace-accordion-option {
-  margin-bottom: 4px;
+ul {
+  display: block;
 }
 
-.workspaces-content-wrapper {
-  padding-top: 12px;
-  padding-bottom: 40px;
+.workspace-accordion-option {
+  margin-bottom: 4px;
 }
 
 .workspaces-title-flex {
@@ -178,4 +194,9 @@
   display: inline-block;
   margin-left: 10px;
   margin-bottom: 12px;
+}
+
+.workspaces-accordion-options {
+  display: list-item;
+  margin-bottom: 4px;
 }
