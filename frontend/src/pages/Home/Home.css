@@ -7,7 +7,7 @@
   
   /* Apply styles to the hero section */
   .hero-section {
-    background-color: #1e40af; /* Dark blue background */
+    background-color: #242c37; /* Dark blue background */
     color: #fff; /* White text */
     padding: 80px 20px;
     text-align: center;
@@ -71,11 +71,13 @@
   /* Apply styles to the contact section */
   .contact-section {
     padding: 60px 20px;
+    text-align: center;
   }
   
   .contact-section h2 {
     font-size: 2.5rem; /* Large font size */
     font-weight: bold; /* Bold text */
     margin-bottom: 40px;
+    
   }
   
