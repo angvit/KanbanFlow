@@ -26,7 +26,6 @@ app.post("/post", async (req, res) => {
 app.put("/put", async (req, res) => {
   const userId = req.body.userId;
   const updatedUserData = req.body.data;
-  console.log(req.body, updatedUserData);
   try {
     await User.doc(userId).update(updatedUserData);
 
@@ -50,4 +49,8 @@ app.delete("/delete", async (req, res) => {
 
 // ROUTES
 const userRouter = require("./routes/users");
+const workspaceRouter = require("./routes/workspaces");
+const dashboardRouter = require("./routes/dashboards");
 app.use("/users", userRouter);
+app.use("/workspaces", workspaceRouter);
+app.use("/dashboards", dashboardRouter);

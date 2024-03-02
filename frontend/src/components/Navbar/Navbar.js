@@ -15,24 +15,6 @@ function Navbar() {
             <Link to="/" className="btn mr-1 btn-ghost text-base">
               KanbanFlow Clone
             </Link>
-            <button
-              onClick={() => loginWithRedirect()}
-              className="btn mr-1 btn-ghost text-base"
-            >
-              Boards
-            </button>
-            <button
-              onClick={() => loginWithRedirect()}
-              className="btn mr-1 btn-ghost text-base"
-            >
-              Dashboard
-            </button>
-            <button
-              onClick={() => loginWithRedirect()}
-              className="btn mr-1 btn-primary text-base"
-            >
-              Create Board
-            </button>
           </div>
           <div className="flex-none">
             <LoginButton />

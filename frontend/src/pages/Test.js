@@ -10,7 +10,7 @@ function Test() {
   const [userIdDelete, setUserIdDelete] = useState("");
 
   const handleGet = () => {
-    const request = axios.get("http://localhost:8000/get");
+    const request = axios.get("get");
     request
       .then((response) => {
         console.log(response.data);
@@ -22,7 +22,7 @@ function Test() {
 
   const handlePost = (insert_name, insert_age) => {
     const userData = { name: insert_name, age: insert_age };
-    const request = axios.post("http://localhost:8000/post", userData);
+    const request = axios.post("post", userData);
     request
       .then((response) => {
         console.log(response.data);
@@ -37,7 +37,7 @@ function Test() {
       data: { name: new_name, age: new_age },
       userId: userId,
     };
-    const request = axios.put("http://localhost:8000/put", newUserData);
+    const request = axios.put("put", newUserData);
     request
       .then((response) => {
         console.log(response.data);
@@ -48,7 +48,7 @@ function Test() {
   };
 
   const handleDelete = (userId) => {
-    const request = axios.delete(`http://localhost:8000/delete`, {
+    const request = axios.delete(`delete`, {
       data: { userId },
     });
     request
