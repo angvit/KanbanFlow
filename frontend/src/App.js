@@ -8,6 +8,7 @@ import Register from "./pages/Register/Register";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Loading from "./components/Loading/Loading";
+import Test from "./pages/Test";
 
 function App() {
   const { isLoading, error } = useAuth0();
@@ -27,6 +28,7 @@ function App() {
               <Route element={<Dashboard />} path="/dashboard" />
               <Route element={<Login />} path="/login" />
               <Route element={<Register />} path="/register" />
+              <Route element={<Test />} path="/test" />
             </Routes>
           </>
         )}
