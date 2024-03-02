@@ -18,7 +18,6 @@ export default function BoardMidContent() {
             <div className='user-workspaces'>
                 <h3 className="boards-page-section-header-name">YOUR WORKSPACES</h3>
                 <Workspace />
-                <Workspace />
             </div>
         </div>
     );

@@ -168,7 +168,12 @@ ul {
 .workspaces-title-flex {
   border-top: 0.5px solid #b6c2cf;
   display: flex;
-  margin-top: 3px;
+  margin-top: 15px;
+}
+
+.workspaces-content-wrapper .collapse-title {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .workspaces-title-wrapper {
@@ -181,10 +186,9 @@ ul {
 }
 
 .workspaces-title {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 16px;
-  margin-top: 16px;
+  line-height: 18px;
   flex: 1 1 auto;
   margin: 0;
   padding: 8px 0;

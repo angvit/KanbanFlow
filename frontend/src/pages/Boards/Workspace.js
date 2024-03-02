@@ -14,6 +14,13 @@ const Workspace = () => {
         { id: 1, title: 'Board 1' },
       ],
     },
+    {
+      id: 2,
+      name: 'Workspace 2',
+      boards: [
+        { id: 2, title: 'Board 2' },
+      ],
+    },
   ]);
 
   const handleNewBoard = (workspaceId) => {
@@ -41,9 +48,9 @@ const Workspace = () => {
             <div className="boards-page-board-section-header">
               <h3 className="board-section-header-name">{workspace.name}</h3>
               <div className="board-section-header-options">
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary workspace-option-btn">Boards</button>
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary workspace-option-btn">Members</button>
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-primary workspace-option-btn">Settings</button>
+                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-neutral workspace-option-btn">Boards</button>
+                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-neutral workspace-option-btn">Members</button>
+                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-neutral workspace-option-btn">Settings</button>
               </div>
             </div>
             <div>
@@ -54,7 +61,14 @@ const Workspace = () => {
                   </li>
                 ))}
                 <li className="board-section-list-item">
-                  <BoardCard title="Create New Board" onClick={() => handleNewBoard(workspace.id)} />
+                  <button
+                    className="card w-50 bg-primary shadow-lg board-card"
+                    onClick={() => handleNewBoard(workspace.id)}
+                  >
+                    <div className="card-body board-card-body">
+                      <h2 className="card-title text-white ">Create New Board</h2>
+                    </div>
+                  </button>
                 </li>
               </ul>
             </div>
