@@ -65,7 +65,7 @@ const Workspace = () => {
                     className="card w-50 bg-primary shadow-lg board-card"
                     onClick={() => handleNewBoard(workspace.id)}
                   >
-                    <div className="card-body board-card-body ">
+                    <div className="card-body board-card-body">
                       <h2 className="card-title text-white ">Create New Board</h2>
                     </div>
                   </button>
