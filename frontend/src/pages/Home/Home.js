@@ -1,16 +1,16 @@
-// Home.js
-
 import React from 'react';
 import './Home.css'; // Import your CSS file
+import Slides from './Slides'; // Update the import path
 
 function Home() {
   return (
     <div className="main-section">
-      {/* Hero Section */}
+      {/* Hero Section with Slides */}
       <section className="hero-section">
         <div className="container mx-auto">
           <h1>Welcome to KanbanFlow Clone</h1>
           <p>Your ultimate project management tool</p>
+          <Slides />
         </div>
       </section>
 
@@ -21,17 +21,17 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="feature-card">
-              <h3>Feature 1</h3>
-              <p>Description of feature 1...</p>
+              <h3>Create Boards</h3>
+              <p>Description of feature 1..</p>
             </div>
             {/* Feature 2 */}
             <div className="feature-card">
-              <h3>Feature 2</h3>
-              <p>Description of feature 2...</p>
+              <h3>Track Porjects</h3>
+              <p>Description of feature 2..</p>
             </div>
             {/* Feature 3 */}
             <div className="feature-card">
-              <h3>Feature 3</h3>
+              <h3>Save the Process</h3>
               <p>Description of feature 3...</p>
             </div>
           </div>
@@ -56,7 +56,7 @@ logic</p>
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contact Us</h2>
-          <p>Contact information and form...</p>
+          <p>Contact KanbanFlow Clone on Slack</p>
         </div>
       </section>
     </div>
@@ -64,7 +64,3 @@ logic</p>
 }
 
 export default Home;
-
-
-
-
