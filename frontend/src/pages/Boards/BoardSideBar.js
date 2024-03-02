@@ -1,7 +1,11 @@
 import React from "react";
+import WorkspaceAccordion from "./WorkspaceAccordion";
+import { useState } from "react";
 import "./Board.css";
 
-export default function BoardSideBar() {
+
+const BoardSideBar = () => {
+
     return (
         <div className='home-sticky-container'>
             <div>
@@ -21,18 +25,40 @@ export default function BoardSideBar() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="collapse collapse-arrow bg-base-200 workspace-accordion-option">
-                                <input type="radio" name="my-accordion-2" checked="checked" />
-                                <div className="collapse-title text-sm">
-                                    Workspace Name
-                                </div>
-                            </div>
-                            <div className="collapse collapse-arrow bg-base-200 workspace-accordion-option">
-                                <input type="radio" name="my-accordion-2" />
-                                <div className="collapse-title text-sm">
-                                    Workspace Name
-                                </div>
-                            </div>
+                            <WorkspaceAccordion workspaceName="Workspace Name">
+                                <li className="workspaces-accordion-options hover:bg-base-200 hover:rounded-md transition-all">
+                                    <a className="accordion-option">
+                                        <span className="accordion-option-text text-sm">Boards</span>
+                                    </a>
+                                </li>
+                                <li className="workspaces-accordion-options">
+                                    <a className="accordion-option">
+                                        <span className="accordion-option-text text-sm">Members</span>
+                                    </a>
+                                </li>
+                                <li className="workspaces-accordion-options">
+                                    <a className="accordion-option">
+                                        <span className="accordion-option-text text-sm">Settings</span>
+                                    </a>
+                                </li>
+                            </WorkspaceAccordion>
+                            <WorkspaceAccordion workspaceName="Workspace Name">
+                                <li className="workspaces-accordion-options">
+                                    <a className="accordion-option">
+                                        <span className="accordion-option-text text-sm">Boards</span>
+                                    </a>
+                                </li>
+                                <li className="workspaces-accordion-options">
+                                    <a className="accordion-option">
+                                        <span className="accordion-option-text text-sm">Members</span>
+                                    </a>
+                                </li>
+                                <li className="workspaces-accordion-options">
+                                    <a className="accordion-option">
+                                        <span className="accordion-option-text text-sm">Settings</span>
+                                    </a>
+                                </li>
+                            </WorkspaceAccordion>
                         </div>
                     </div>
                 </nav>
@@ -40,3 +66,5 @@ export default function BoardSideBar() {
         </div>
     )
 }
+
+export default BoardSideBar;
