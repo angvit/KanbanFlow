@@ -47,10 +47,14 @@ app.delete("/delete", async (req, res) => {
   }
 });
 
-// ROUTES
+// ROUTESy
 const userRouter = require("./routes/users");
 const workspaceRouter = require("./routes/workspaces");
 const dashboardRouter = require("./routes/dashboards");
+const dashboard = require("./routes/dashboard_containers");
+const task = require("./routes/tasks");
 app.use("/users", userRouter);
 app.use("/workspaces", workspaceRouter);
 app.use("/dashboards", dashboardRouter);
+app.use("/dashboard_containers", dashboard);
+app.use("/tasks", task);

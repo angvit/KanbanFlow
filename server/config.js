@@ -15,4 +15,6 @@ const db = firebase.firestore();
 const User = db.collection("users");
 const Workspace = db.collection("workspaces");
 const Dashboard = db.collection("dashboards");
-module.exports = { User, Workspace, Dashboard };
+const Dashboard_container = db.collection("dashboard_containers");
+const Task = db.collection("tasks");
+module.exports = { User, Workspace, Dashboard, Dashboard_container, Task};

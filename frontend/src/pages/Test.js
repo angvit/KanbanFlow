@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Test() {
   const [name, setName] = useState("");
@@ -9,6 +9,8 @@ function Test() {
   const [ageUpdate, setAgeUpdate] = useState("");
   const [userIdUpdate, setUserIdUpdate] = useState("");
   const [userIdDelete, setUserIdDelete] = useState("");
+
+  const { user } = useAuth0();
 
   const handleGet = () => {
     const request = axios.get("get");
@@ -51,6 +53,21 @@ function Test() {
   const handleDelete = (userId) => {
     const request = axios.delete(`delete`, {
       data: { userId },
+    });
+    request
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const createWorkspace = () => {
+    const request = axios.post("workspaces", {
+      name: "Workspace",
+      desecrption: "Description",
+      user: user.sub,
     });
     request
       .then((response) => {
@@ -118,6 +135,11 @@ function Test() {
           >
             Delete
           </button>
+        </div>
+        <div>
+          <button className="btn" onClick={() => createWorkspace()}>
+            Create Workspace
+          </button> 
         </div>
       </div>
     </>
