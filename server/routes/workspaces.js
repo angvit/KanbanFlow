@@ -4,12 +4,11 @@ const Workspace = require("../config").Workspace;
 const User = require("../config").User;
 
 router
-  .route("/")
+  .route("/:id")
   .get(async (req, res) => {
-    const userDoc = await User.doc("BWqz9HkUceD0qrUsoZ3I").get();
-
+    const userId = req.params.id;
+    const userDoc = await User.doc(userId).get();
     const workspaces = await userDoc.ref.collection("workspaces").get();
-
     const workspaceList = workspaces.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -19,8 +18,8 @@ router
     res.send(workspaceList);
   })
   .post(async (req, res) => {
-    const workspace = req.body.data;
-    const userId = req.body.user; //MAKE SURE TO GET ID WHEN YOU DO THIS!!!!!
+    const workspace = req.body;
+    const userId = req.params.id;
 
     try {
       const newWorkspace = await User.doc(userId)

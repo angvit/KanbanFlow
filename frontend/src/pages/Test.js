@@ -64,9 +64,9 @@ function Test() {
   };
 
   const createWorkspace = () => {
-    const request = axios.post("workspaces", {
-      data: { name: "Workspace", desecrption: "Description" },
-      user: user.sub,
+    const request = axios.post(`workspaces/${user.sub}`, {
+      name: "Workspace",
+      desecrption: "Description",
     });
     request
       .then((response) => {
@@ -78,7 +78,7 @@ function Test() {
   };
 
   const getWorkspace = () => {
-    const request = axios.get("workspaces");
+    const request = axios.get(`workspaces/${user.sub}`);
     request
       .then((response) => {
         console.log(response.data);
