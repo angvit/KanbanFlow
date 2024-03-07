@@ -6,19 +6,32 @@ const User = require("../config").User;
 router
   .route("/")
   .get(async (req, res) => {
-    data = await Workspace.get();
-    res.json({ message: "Workspaces" });
-    console.log(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    const userDoc = await User.doc("BWqz9HkUceD0qrUsoZ3I").get();
+
+    const workspaces = await userDoc.ref.collection("workspaces").get();
+
+    const workspaceList = workspaces.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    console.log("Workspaces: ", workspaceList);
+    res.send(workspaceList);
   })
   .post(async (req, res) => {
-    const workspace = req.body;
-    const newDash = await Workspace.add(workspace);
-    await User.doc("BWqz9HkUceD0qrUsoZ3I") //MAKE SURE TO GET ID WHEN YOU DO THIS!!!!!
-      .collection("workspaces")
-      .doc(newDash.id)
-      .set({});
+    const workspace = req.body.data;
+    const userId = req.body.user; //MAKE SURE TO GET ID WHEN YOU DO THIS!!!!!
 
-    res.json({ message: "Workspace added" });
+    try {
+      const newWorkspace = await User.doc(userId)
+        .collection("workspaces")
+        .add(workspace);
+      console.log("Workspace into collection of: ", userId);
+      res.json({ message: "Workspace added" });
+    } catch (error) {
+      console.error("Error adding workspace: ", error);
+      res.status(500).json({ message: "Error adding workspace" });
+    }
   });
 
 module.exports = router;

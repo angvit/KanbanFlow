@@ -65,10 +65,20 @@ function Test() {
 
   const createWorkspace = () => {
     const request = axios.post("workspaces", {
-      name: "Workspace",
-      desecrption: "Description",
+      data: { name: "Workspace", desecrption: "Description" },
       user: user.sub,
     });
+    request
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const getWorkspace = () => {
+    const request = axios.get("workspaces");
     request
       .then((response) => {
         console.log(response.data);
@@ -139,7 +149,10 @@ function Test() {
         <div>
           <button className="btn" onClick={() => createWorkspace()}>
             Create Workspace
-          </button> 
+          </button>
+          <button className="btn" onClick={() => getWorkspace()}>
+            Get Workspace
+          </button>
         </div>
       </div>
     </>
