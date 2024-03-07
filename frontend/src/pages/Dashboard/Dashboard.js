@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 import Navbar from "../../components/Navbar/Navbar";
+import axios from "axios";
 
 function Dashboard() {
   const [Containers, setContainers] = useState(["To do", "Doing", "Done"]);
   const [addContainer, setAddContainer] = useState(false);
   const [containerTitle, setContainerTitle] = useState("");
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const request = axios.get(`/dashboards/${id}`);
+    request
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const saveCard = (event) => {
     if (containerTitle === "") {

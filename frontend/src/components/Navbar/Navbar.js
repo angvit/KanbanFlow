@@ -29,8 +29,9 @@ function Navbar() {
             <Link to="/boards" className="btn mr-1 btn-ghost text-base">
               Boards
             </Link>
-            <Link to="/dashboard" className="btn mr-1 btn-ghost text-base">
-              Dashboard
+            <Link to="/dashboard/2" className="btn mr-1 btn-ghost text-base">
+              Dashboard 
+              {/* THE 2 WILL BE REPLACED LATER, DASHBOARD WILL NOT BE IN THE NAV BAR */}
             </Link>
             <Link to="/" className="btn mr-1 btn-primary text-base">
               Create Board
