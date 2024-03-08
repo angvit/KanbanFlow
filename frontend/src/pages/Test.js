@@ -10,6 +10,8 @@ function Test() {
   const [userIdUpdate, setUserIdUpdate] = useState("");
   const [userIdDelete, setUserIdDelete] = useState("");
 
+  const [workspaces, setWorkspace] = useState([]);
+
   const { user } = useAuth0();
 
   const handleGet = () => {
@@ -66,7 +68,7 @@ function Test() {
   const createWorkspace = () => {
     const request = axios.post(`workspaces/${user.sub}`, {
       name: "Workspace",
-      desecrption: "Description",
+      description: "Description",
     });
     request
       .then((response) => {
@@ -79,6 +81,17 @@ function Test() {
 
   const getWorkspace = () => {
     const request = axios.get(`workspaces/${user.sub}`);
+    request
+      .then((response) => {
+        setWorkspace(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const getBoard = (workspaceId) => {
+    const request = axios.get(`dashboards/${user.sub}/${workspaceId}`);
     request
       .then((response) => {
         console.log(response.data);
@@ -150,9 +163,21 @@ function Test() {
           <button className="btn" onClick={() => createWorkspace()}>
             Create Workspace
           </button>
-          <button className="btn" onClick={() => getWorkspace()}>
+          <button className="btn" onClick={getWorkspace}>
             Get Workspace
           </button>
+          <div>
+            {workspaces.map((workspace) => (
+              <div key={workspace.id}>
+                <p>{workspace.id}</p>
+                <p>{workspace.name}</p>
+                <p>{workspace.description}</p>
+                <button className="btn" onClick={() => getBoard(workspace.id)}>
+                  Get Board
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
