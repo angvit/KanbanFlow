@@ -22,9 +22,7 @@ router
     const userId = req.params.id;
 
     try {
-      const newWorkspace = await User.doc(userId)
-        .collection("workspaces")
-        .add(workspace);
+      await User.doc(userId).collection("workspaces").add(workspace);
       console.log("Workspace into collection of: ", userId);
       res.json({ message: "Workspace added" });
     } catch (error) {
