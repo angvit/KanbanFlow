@@ -1,15 +1,19 @@
 import React from 'react';
 import './Home.css'; // Import your CSS file
 import Slides from './Slides'; // Update the import path
+import KFBanner from 'C:/Users/noshi/KanbanFlow-Clone/frontend/src/pages/Home/KFBanner.png';
 
 function Home() {
   return (
     <div className="main-section">
-      {/* Hero Section with Slides */}
+         <div className="center-image"> {/* Added a new div with 'center-image' class */}
+            <img src={KFBanner} alt="KanbanFlow Banner" style={{ width: '75%', height: 'auto' }} />
+          </div>
       <section className="hero-section">
-        <div className="container mx-auto">
+        <div className="container mx-auto text-center"> {/* Added 'text-center' class */}
           <h1>Welcome to KanbanFlow Clone</h1>
           <p>Your ultimate project management tool</p>
+          <br></br>
           <Slides />
         </div>
       </section>
@@ -22,17 +26,17 @@ function Home() {
             {/* Feature 1 */}
             <div className="feature-card">
               <h3>Create Boards</h3>
-              <p>Description of feature 1..</p>
+              <p> Allows users to easily organize and categorize their content. With just a few clicks, users can set up personalized boards to keep their information neatly arranged, enhancing efficiency and accessibility in managing their data or projects.</p>
             </div>
             {/* Feature 2 */}
             <div className="feature-card">
               <h3>Track Porjects</h3>
-              <p>Description of feature 2..</p>
+              <p>Allows users to monitor and oversee tasks. This feature enables users to effortlessly stay on top of project progress, deadlines, and milestones, streamlining the project tracking process for increased productivity and success.</p>
             </div>
             {/* Feature 3 */}
             <div className="feature-card">
               <h3>Save the Process</h3>
-              <p>Description of feature 3...</p>
+              <p>Allows user to preserve their work effortlessly. With a simple click or command, users can save their current progress, ensuring that valuable data, configurations, or edits are securely stored. This allows users to pick up right where they left off without any hassle. </p>
             </div>
           </div>
         </div>
