@@ -1,6 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from './AuthContext/AuthContext';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Board from "./pages/Boards/Board";
 import Login from "./pages/Login/Login";
@@ -13,17 +12,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <AuthProvider> {/* Wrap your components with AuthProvider */}
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/boards" element={<Board />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/boards" element={<Board />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
       </Router>
     </div>
   );
