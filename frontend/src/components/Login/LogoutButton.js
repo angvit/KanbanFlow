@@ -7,10 +7,7 @@ function LogoutButton() {
   return (
     <div>
       {isAuthenticated ? (
-        <button
-          className="btn"
-          onClick={() => logout()}
-        >
+        <button className="" onClick={() => logout()}>
           Log Out
         </button>
       ) : null}

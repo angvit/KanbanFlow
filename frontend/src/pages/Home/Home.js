@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 import './Home.css'; // Import your CSS file
 import Slides from './Slides'; // Update the import path
 import KFBanner from 'C:/Users/noshi/KanbanFlow-Clone/frontend/src/pages/Home/KFBanner.png';
 
 function Home() {
+  const { user } = useAuth0();
+  useEffect(() => {
+    if (user) {
+      const request = axios.post("users", user);
+      request
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, []);
+  
   return (
     <div className="main-section">
          <div className="center-image"> {/* Added a new div with 'center-image' class */}
