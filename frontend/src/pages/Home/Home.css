@@ -80,3 +80,9 @@
   font-weight: bold; /* Bold text */
   margin-bottom: 40px;   
 }
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* Ensures the image fits within the container without cropping */
+  object-position: top; /* Aligns the image towards the top, showing more of the bottom */
+}

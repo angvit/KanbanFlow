@@ -9,7 +9,6 @@ function Home() {
       <section className="hero-section">
         <div className="container mx-auto">
           <h1>Welcome to KanbanFlow Clone</h1>
-          <p>Your ultimate project management tool</p>
           <Slides />
         </div>
       </section>
@@ -26,13 +25,13 @@ function Home() {
             </div>
             {/* Feature 2 */}
             <div className="feature-card">
-              <h3>Track Porjects</h3>
+              <h3>Track Projects</h3>
               <p>Description of feature 2..</p>
             </div>
             {/* Feature 3 */}
             <div className="feature-card">
               <h3>Save the Process</h3>
-              <p>Description of feature 3...</p>
+              <p>Description of feature 3..</p>
             </div>
           </div>
         </div>
