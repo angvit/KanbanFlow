@@ -42,7 +42,7 @@ input:focus, textarea:focus {
 }
 
 #saveButton {
-    background-color: #4CAF50;
+    background-color: #4e1f7a;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -53,6 +53,13 @@ input:focus, textarea:focus {
 }
 
 #saveButton:hover {
-    background-color: #45a049;
+    background-color: #4569a0;
+}
+
+#profileImage {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px; /* Optional: Add rounded corners to the image */
 }
 
