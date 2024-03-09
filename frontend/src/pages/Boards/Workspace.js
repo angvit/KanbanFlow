@@ -10,6 +10,7 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
   const [newBoardTitle, setNewBoardTitle] = useState('');
   const [newBoardColor, setNewBoardColor] = useState('#FFFFFF');
   const [selectedWorkspaceId, setSelectedWorkspaceId] = useState(workspace.id);
+  const [newBoardDescription, setNewBoardDescription] = useState('');
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -26,12 +27,15 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
       title: newBoardTitle || 'Untitled Board',
       color: newBoardColor,
       workspaceId: selectedWorkspaceId,
+      description: newBoardDescription,
     };
     // Update the workspace data with the new board
     updateWorkspaceData({
       ...workspace,
       boards: [...workspace.boards, newBoard],
     });
+
+    console.log(workspace.boards);
 
     // Reset form fields
     setNewBoardTitle('');
@@ -108,6 +112,20 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
                 onChange={(e) => setNewBoardColor(e.target.value)}
                 className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm"
               />
+
+              {/* Board Description Input */}
+              <label htmlFor="boardDescription" className="block text-sm font-medium text-gray-700 mt-4">
+                Description
+              </label>
+              <textarea
+                id="boardDescription"
+                name="boardDescription"
+                value={newBoardDescription}
+                onChange={(e) => setNewBoardDescription(e.target.value)}
+                placeholder="Something creative here"
+                className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                rows="3"
+              ></textarea>
 
               {/* Modal Actions */}
               <div className="modal-action mt-6">
