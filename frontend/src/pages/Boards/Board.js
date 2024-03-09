@@ -1,27 +1,26 @@
+import "./Board.css";
 import React, { useState } from "react";
 import BoardSideBar from "./BoardSideBar";
 import BoardMidContent from "./BoardMidContent";
-import "./Board.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
+import axios from "axios";
+
 
 export default function Board() {
+    const { user } = useAuth0();
+    const [workspaces, setWorkspaces] = useState([]);
 
-    const [workspaces, setWorkspaces] = useState([
-        {
-            id: 1,
-            name: 'Workspace 1',
-            boards: [
-                { id: 1, title: 'Board 1' },
-            ],
-        },
-        {
-            id: 2,
-            name: 'Workspace 2',
-            boards: [
-                { id: 2, title: 'Board 2' },
-            ],
-        },
-    ]);
-
+    useEffect(() => {
+        const request = axios.get(`workspaces/${user.sub}`);
+        request
+            .then((response) => {
+                setWorkspaces(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     return (
         <div className="kanban-root">
