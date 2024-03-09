@@ -9,10 +9,24 @@ router
     const userId = req.params.id;
     const userDoc = await User.doc(userId).get();
     const workspaces = await userDoc.ref.collection("workspaces").get();
-    const workspaceList = workspaces.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+
+    const workspaceList = await Promise.all(
+      workspaces.docs.map(async (doc) => {
+        const workspace = await userDoc.ref
+          .collection("workspaces")
+          .doc(doc.id);
+        const dashboardSnapshot = await workspace
+          .collection("dashboards")
+          .get();
+        const dashboard = dashboardSnapshot.docs.map((doc) => doc.data());
+
+        return {
+          id: doc.id,
+          ...doc.data(),
+          boards: dashboard,
+        };
+      })
+    );
 
     console.log("Workspaces: ", workspaceList);
     res.send(workspaceList);
