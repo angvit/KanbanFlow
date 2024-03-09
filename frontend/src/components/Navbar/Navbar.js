@@ -24,7 +24,7 @@ function Navbar() {
   return (
     <div className="navbar bg-base-300 fixed top-0 z-50 w-full">
       <div className="flex-1">
-        <Link to="/" className="btn mr-1 btn-ghost text-lg">KanbanFlow Clone</Link>
+        <Link to="/" className="btn mr-1 btn-ghost text-lg">Home</Link>
         <Link to="/boards" className="btn mr-1 btn-ghost text-lg">Boards</Link>
         <Link to="/dashboard" className="btn mr-1 btn-ghost text-lg">Dashboard</Link>
         {/* <Link to="/" className="btn mr-1 btn-primary text-lg">Create Board</Link> */}
