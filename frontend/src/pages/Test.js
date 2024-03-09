@@ -84,6 +84,7 @@ function Test() {
     request
       .then((response) => {
         setWorkspace(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
