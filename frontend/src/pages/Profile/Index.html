@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="Profile.css">
+    <title>Profile Page</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Manage your personal information</h1>
+            <h2>About</h2>
+        </header>
+        
+        <form id="aboutForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" placeholder="Write a short bio about yourself" rows="4" required></textarea>
+
+            <button type="button" id="saveButton" onclick="saveInfo()">Save</button>
+        </form>
+    </div>
+
+    <script src="Profile.js"></script>
+</body>
+</html>

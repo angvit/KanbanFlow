@@ -3,7 +3,15 @@ import BoardCard from '../../components/BoardCard/BoardCard';
 import Workspace from './Workspace';
 import './Board.css';
 
-export default function BoardMidContent() {
+export default function BoardMidContent({ workspaces, setWorkspaces }) {
+
+    const updateWorkspaceData = (workspaceId, newWorkspaceData) => {
+        const updatedWorkspaces = workspaces.map(workspace =>
+            workspace.id === workspaceId ? { ...workspace, ...newWorkspaceData } : workspace
+        );
+        setWorkspaces(updatedWorkspaces);
+    };
+    
     return (
         <div className='all-boards'>
             <div className='recent-view'>
@@ -17,8 +25,13 @@ export default function BoardMidContent() {
             </div>
             <div className='user-workspaces'>
                 <h3 className="boards-page-section-header-name">YOUR WORKSPACES</h3>
-                <Workspace />
-                <Workspace />
+                {workspaces.map(workspace => (
+                    <Workspace
+                        key={workspace.id}
+                        workspace={workspace}
+                        updateWorkspaceData={updateWorkspaceData}
+                    />
+                ))}
             </div>
         </div>
     );

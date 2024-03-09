@@ -1,83 +1,82 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1e232a; /* Background color */
-    color: #fff; /* Text color */
+/* Apply styles to the main section */
+.main-section {
+  padding: 40px 20px;
+  
 }
 
-header {
-    background-color: #15191f; /* Header background color */
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+/* Apply styles to the hero section */
+.hero-section {
+  background-color: #242c37; /* Dark blue background */
+  color: #fff; /* White text */
+  padding: 80px 20px;
+  text-align: center;
 }
 
-nav {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.hero-section h1 {
+  font-size: 3rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 20px;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.hero-section p {
+  font-size: 1.5rem; /* Medium font size */
+
 }
 
-nav ul li {
-    display: inline;
-    margin-left: 10px;
+/* Apply styles to the features section */
+.features-section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.features-section h2 {
+  font-size: 2.5rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 40px;
 }
 
-.title {
-    margin-top: 50px; /* Adjust this value to center the title vertically */
+/* Apply styles to the individual feature cards */
+.feature-card {
+  background-color: #f3f4f6; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-main {
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.feature-card h3 {
+  font-size: 1.5rem; /* Medium font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 10px;
 }
 
-#features {
-    text-align: center; /* Center the content within the features section */
+.feature-card p {
+  font-size: 1rem; /* Small font size */
+  color: #6b7280; /* Gray text */
 }
 
-#features ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0; /* Remove default padding */
+/* Apply styles to the about section */
+.about-section {
+  background-color: #edf2f7; /* Light blue background */
+  color: #4b5563; /* Dark gray text */
+  padding: 60px 20px;
+  text-align: center;
 }
 
-#features li {
-    margin-bottom: 10px; /* Add spacing between features */
+.about-section h2 {
+  font-size: 2.5rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 40px;
 }
 
-#about,
-#contact {
-    text-align: center; /* Center the content within these sections */
+/* Apply styles to the contact section */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-#about p,
-#contact p {
-    text-align: left; /* Align paragraph content to the left within these sections */
-}
-
-section {
-    margin-bottom: 30px;
-    text-align: left; /* Align section content to the left */
-}
-
-footer {
-    background-color: #f4f5f7;
-    text-align: center;
-    padding: 10px;
+.contact-section h2 {
+  font-size: 2.5rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 40px;   
 }

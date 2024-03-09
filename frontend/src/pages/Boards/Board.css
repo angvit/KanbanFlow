@@ -18,6 +18,23 @@
   width: 100%;
 }
 
+.accordion-option {
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  min-height: 24px;
+  padding: 4px 8px 4px 40px;
+}
+
+.accordion-option-text {
+  flex: 1 auto;
+  width: min-content;
+}
+
 .all-boards .boards-page-board-section {
   padding: 0 0 20px;
 }
@@ -140,19 +157,23 @@
   margin-bottom: 4px;
 }
 
-.workspace-accordion-option {
-  margin-bottom: 4px;
+ul {
+  display: block;
 }
 
-.workspaces-content-wrapper {
-  padding-top: 12px;
-  padding-bottom: 40px;
+.workspace-accordion-option {
+  margin-bottom: 4px;
 }
 
 .workspaces-title-flex {
   border-top: 0.5px solid #b6c2cf;
   display: flex;
-  margin-top: 3px;
+  margin-top: 15px;
+}
+
+.workspaces-content-wrapper .collapse-title {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .workspaces-title-wrapper {
@@ -165,10 +186,9 @@
 }
 
 .workspaces-title {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 16px;
-  margin-top: 16px;
+  line-height: 18px;
   flex: 1 1 auto;
   margin: 0;
   padding: 8px 0;
@@ -178,4 +198,9 @@
   display: inline-block;
   margin-left: 10px;
   margin-bottom: 12px;
+}
+
+.workspaces-accordion-options {
+  display: list-item;
+  margin-bottom: 4px;
 }
