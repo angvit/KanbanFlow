@@ -3,16 +3,20 @@ import { useParams } from "react-router-dom";
 import DashboardContainer from "../../components/DashboardContainer/DashboardContainer";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Dashboard() {
-  const [Containers, setContainers] = useState(["To do", "Doing", "Done"]);
+  const [containers, setContainers] = useState([
+    // "To do", "Doing", "Done"
+  ]);
   const [addContainer, setAddContainer] = useState(false);
   const [containerTitle, setContainerTitle] = useState("");
 
-  const { id } = useParams();
+  const { user } = useAuth0();
+  const { workspaceId, id } = useParams();
 
   useEffect(() => {
-    const request = axios.get(`/dashboards/${id}`);
+    const request = axios.get(`/dashboards/${user.sub}/${workspaceId}/${id}`);
     request
       .then((response) => {
         console.log(response.data);
@@ -27,7 +31,7 @@ function Dashboard() {
       alert("Please fill in all fields");
       return;
     }
-    setContainers([...Containers, containerTitle]);
+    setContainers([...containers, containerTitle]);
     setAddContainer(false);
     setContainerTitle("");
   };
@@ -40,7 +44,7 @@ function Dashboard() {
           {/* <Navbar /> */}
           {/* NEED TO FIX NAVBAR ISSUE */}
           <div className="flex">
-            {Containers.map((container, index) => (
+            {containers.map((container, index) => (
               <DashboardContainer title={container} key={index} />
             ))}
             {addContainer ? (

@@ -5,14 +5,14 @@ function DashboardContainer(props) {
   const [counter, setCounter] = useState(3);
   // THIS IS JUST A PLACEHOLDER FOR NOW UNTIL WE GET THE DATA FROM THE BACKEND
   const [tasks, setTasks] = useState([
-    { title: "Task 1", task: "Do something", id: 1 },
-    { title: "Task 2", task: "Do something else", id: 2 },
-    {
-      title:
-        "This Task name is very long just beacuase I want to test something :D",
-      task: "Do something else This is a test for over flowing cards to make sure that it is contained in the box as it should be",
-      id: 3,
-    },
+    // { title: "Task 1", task: "Do something", id: 1 },
+    // { title: "Task 2", task: "Do something else", id: 2 },
+    // {
+    //   title:
+    //     "This Task name is very long just beacuase I want to test something :D",
+    //   task: "Do something else This is a test for over flowing cards to make sure that it is contained in the box as it should be",
+    //   id: 3,
+    // },
   ]);
   const [input, setInput] = useState(false);
   const [taskTitle, setTaskTitle] = useState("");

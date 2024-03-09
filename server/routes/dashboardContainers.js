@@ -2,11 +2,20 @@ const express = require("express");
 const router = express.Router();
 const DashboardContainer = require("../config").DashboardContainer;
 
-router.route("/").get(async (req, res) => {
+router.route("/:userid/:workid/:id").get(async (req, res) => {
   try {
-    const data = await DashboardContainer.get();
-    res.json({ message: "DashboardContainer", data });
-    console.log(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    const userId = req.params.userid;
+    const workspaceId = req.params.workid;
+    const id = req.params.id;
+    const userDoc = await User.doc(userId).get();
+    const workspace = await userDoc.ref
+      .collection("workspaces")
+      .doc(workspaceId);
+    const dashboard = await workspace.collection("dashboards").doc(id).get();
+    const DashboardContainer = await dashboard.ref
+      .collection("containers")
+      .get();
+    console.log("DashboardContainer: ", DashboardContainer);
   } catch (error) {
     console.error(error);
     res
