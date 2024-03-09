@@ -24,8 +24,8 @@ function TaskCard(props) {
           }
         >
           <div className="card-body flex flex-col px-3">
-            <h2 className="card-title text-left ">{props.title}</h2>
-            <p className="card-title font-normal text-lg text-left">
+            <h2 className="card-title text-left text-base ">{props.title}</h2>
+            <p className="card-title font-normal text-sm text-left">
               {props.task}
             </p>
           </div>
@@ -42,7 +42,7 @@ function TaskCard(props) {
               Save Changes
             </button>
           </form>
-          <h1 className="font-bold text-3xl pb-5">{props.title}</h1>
+          <h1 className="font-bold text-xl pb-5">{props.title}</h1>
           <h1 className="py-2 text-xl">Edit Task Title</h1>
           <input
             type="text"
