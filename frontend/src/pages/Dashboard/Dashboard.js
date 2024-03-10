@@ -6,9 +6,7 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function Dashboard() {
-  const [containers, setContainers] = useState([
-    // "To do", "Doing", "Done"
-  ]);
+  const [containers, setContainers] = useState([]);
   const [addContainer, setAddContainer] = useState(false);
   const [containerTitle, setContainerTitle] = useState("");
 
@@ -16,10 +14,12 @@ function Dashboard() {
   const { workspaceId, id } = useParams();
 
   useEffect(() => {
-    const request = axios.get(`/dashboards/${user.sub}/${workspaceId}/${id}`);
+    const request = axios.get(
+      `/dashboard_containers/${user.sub}/${workspaceId}/${id}`
+    );
     request
       .then((response) => {
-        console.log(response.data);
+        setContainers(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -31,7 +31,20 @@ function Dashboard() {
       alert("Please fill in all fields");
       return;
     }
-    setContainers([...containers, containerTitle]);
+    const request = axios.post(
+      `/dashboard_containers/${user.sub}/${workspaceId}/${id}`,
+      {
+        title: containerTitle,
+      }
+    );
+    request
+      .then((response) => {
+        console.log(response.data);
+        setContainers([...containers, response.data]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     setAddContainer(false);
     setContainerTitle("");
   };
@@ -45,7 +58,11 @@ function Dashboard() {
           {/* NEED TO FIX NAVBAR ISSUE */}
           <div className="flex">
             {containers.map((container, index) => (
-              <DashboardContainer title={container} key={index} />
+              <DashboardContainer
+                title={container.title}
+                containerId={container.id}
+                key={index}
+              />
             ))}
             {addContainer ? (
               <div className="m-10 mr-10">

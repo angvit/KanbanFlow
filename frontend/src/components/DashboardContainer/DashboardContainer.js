@@ -1,26 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TaskCard from "../../components/TaskCard/TaskCard";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useParams } from "react-router-dom";
 
 function DashboardContainer(props) {
   const [counter, setCounter] = useState(3);
-  // THIS IS JUST A PLACEHOLDER FOR NOW UNTIL WE GET THE DATA FROM THE BACKEND
-  const [tasks, setTasks] = useState([
-    // { title: "Task 1", task: "Do something", id: 1 },
-    // { title: "Task 2", task: "Do something else", id: 2 },
-    // {
-    //   title:
-    //     "This Task name is very long just beacuase I want to test something :D",
-    //   task: "Do something else This is a test for over flowing cards to make sure that it is contained in the box as it should be",
-    //   id: 3,
-    // },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState(false);
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
 
+  const { user } = useAuth0();
+  const { workspaceId, id } = useParams();
+
+  useEffect(() => {
+    const request = axios.get(
+      `/tasks/${user.sub}/${workspaceId}/${id}/${props.containerId}`
+    );
+    request
+      .then((response) => {
+        console.log(response.data);
+        setTasks(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const addCard = () => {
     setCounter(counter + 1);
-    // COUNTER WILL BE REPLACED WITH THE TASK CARD ID FROM THE BACKEND
     setInput(true);
   };
 
@@ -67,7 +76,7 @@ function DashboardContainer(props) {
           {tasks.map((task, index) => (
             <TaskCard
               title={task.title}
-              task={task.task}
+              task={task.description}
               id={task.id}
               key={index}
             />
