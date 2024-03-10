@@ -5,7 +5,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useParams } from "react-router-dom";
 
 function DashboardContainer(props) {
-  const [counter, setCounter] = useState(3);
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState(false);
   const [taskTitle, setTaskTitle] = useState("");
@@ -20,7 +19,6 @@ function DashboardContainer(props) {
     );
     request
       .then((response) => {
-        console.log(response.data);
         setTasks(response.data);
       })
       .catch((error) => {
@@ -29,7 +27,6 @@ function DashboardContainer(props) {
   }, []);
 
   const addCard = () => {
-    setCounter(counter + 1);
     setInput(true);
   };
 
@@ -38,13 +35,20 @@ function DashboardContainer(props) {
       alert("Please fill in all fields");
       return;
     }
-    const newTask = {
-      title: taskTitle,
-      task: taskDescription,
-      id: counter,
-      // COUNTER WILL BE REPLACED WITH THE TASK CARD ID FROM THE BACKEND
-    };
-    setTasks([...tasks, newTask]);
+    const request = axios.post(
+      `/tasks/${user.sub}/${workspaceId}/${id}/${props.containerId}`,
+      {
+        title: taskTitle,
+        description: taskDescription,
+      }
+    );
+    request
+      .then((response) => {
+        setTasks([...tasks, response.data]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     setInput(false);
     setTaskTitle("");
     setTaskDescription("");
