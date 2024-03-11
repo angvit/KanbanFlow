@@ -76,13 +76,17 @@ function DashboardContainer(props) {
           <h2 className="card-title mb-2 text-xl" id="card-container">
             {props.title}
           </h2>
-          {/* Place holder cards WILL REMOVE LATER */}
+          {/* USE THIS TO DELETE CONTAINERS */}
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
           {tasks.map((task, index) => (
             <TaskCard
               title={task.title}
               task={task.description}
               id={task.id}
               key={index}
+              containerId={props.containerId}
             />
           ))}
           {input ? (
