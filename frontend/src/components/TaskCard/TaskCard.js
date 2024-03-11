@@ -16,30 +16,36 @@ function TaskCard(props) {
 
   const [title, setTitle] = useState(props.title);
   const [task, setTask] = useState(props.task);
-
-  console.log(task);
+  const [newTitle, setNewTitle] = useState(props.title);
+  const [newTask, setNewTask] = useState(props.task);
 
   const { user } = useAuth0();
   const { workspaceId, id } = useParams();
 
   const handleUpdate = () => {
+    if (newTitle === "" || newTask === "") {
+      alert("Please fill in all fields");
+      return;
+    }
     const request = axios.put(
       `/tasks/${user.sub}/${workspaceId}/${id}/${props.containerId}`,
       {
         id: props.id,
-        title: title,
-        description: task,
+        title: newTitle,
+        description: newTask,
       }
     );
+    setTitle(newTitle);
+    setTask(newTask);
     request
       .then((response) => {
         console.log(response.data);
-        setTitle(response.data.title);
-        setTask(response.data.description);
       })
       .catch((error) => {
         console.log(error);
       });
+    setNewTask("");
+    setNewTitle("");
   };
 
   const handleDelete = () => {
@@ -103,14 +109,14 @@ function TaskCard(props) {
             type="text"
             placeholder="Edit Task Title Here..."
             defaultValue={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setNewTitle(e.target.value)}
           />
           <h1 className="py-2 text-xl">Edit Task Description</h1>
           <textarea
             className="textarea textarea-lg textarea-bordered w-full h-48 resize-none	"
             placeholder="Edit Task Description Here..."
             defaultValue={task}
-            onChange={(e) => setTask(e.target.value)}
+            onChange={(e) => setNewTask(e.target.value)}
           ></textarea>
         </div>
       </dialog>

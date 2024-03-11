@@ -26,7 +26,7 @@ function Dashboard() {
       });
   }, []);
 
-  const saveCard = (event) => {
+  const saveContainer = (event) => {
     if (containerTitle === "") {
       alert("Please fill in all fields");
       return;
@@ -37,10 +37,10 @@ function Dashboard() {
         title: containerTitle,
       }
     );
+    setContainers([...containers, { title: containerTitle }]);
     request
       .then((response) => {
         console.log(response.data);
-        setContainers([...containers, response.data]);
       })
       .catch((error) => {
         console.log(error);
@@ -78,9 +78,7 @@ function Dashboard() {
                     onChange={(e) => {
                       setContainerTitle(e.target.value);
                     }}
-                    onClick={() => {
-                      saveCard();
-                    }}
+                    onClick={saveContainer}
                   >
                     Add List
                   </button>

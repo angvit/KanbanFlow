@@ -9,6 +9,8 @@ function DashboardContainer(props) {
   const [input, setInput] = useState(false);
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
+  const [title, setTitle] = useState(props.title);
+  const [newTitle, setNewTitle] = useState(props.title);
 
   const { user } = useAuth0();
   const { workspaceId, id } = useParams();
@@ -42,9 +44,10 @@ function DashboardContainer(props) {
         description: taskDescription,
       }
     );
+    setTasks([...tasks, { title: taskTitle, description: taskDescription }]);
     request
       .then((response) => {
-        setTasks([...tasks, response.data]);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -52,6 +55,39 @@ function DashboardContainer(props) {
     setInput(false);
     setTaskTitle("");
     setTaskDescription("");
+  };
+
+  const handlePut = () => {
+    const request = axios.put(
+      `/dashboard_containers/${user.sub}/${workspaceId}/${id}/${props.containerId}`,
+      { title: newTitle }
+    );
+    setTitle(newTitle);
+    request
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setNewTitle("");
+  };
+
+  const handleDelete = () => {
+    const choice = window.confirm("Are you sure you want to delete this task?");
+    if (choice) {
+      const request = axios.delete(
+        `/dashboard_containers/${user.sub}/${workspaceId}/${id}/${props.containerId}`
+      );
+      request
+        .then((response) => {
+          console.log(response.data);
+          document.getElementById(`container_${props.containerId}`).remove();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   const handleDrop = (event) => {
@@ -66,7 +102,7 @@ function DashboardContainer(props) {
   };
 
   return (
-    <div>
+    <div id={`container_${props.containerId}`}>
       <div
         className="card w-80 bg-base-200 m-10"
         onDrop={handleDrop}
@@ -74,10 +110,21 @@ function DashboardContainer(props) {
       >
         <div className="card-body">
           <h2 className="card-title mb-2 text-xl" id="card-container">
-            {props.title}
+            <button
+              className=""
+              onClick={() =>
+                document
+                  .getElementById(`my_modal_${props.containerId}`)
+                  .showModal()
+              }
+            >
+              {title}
+            </button>
           </h2>
-          {/* USE THIS TO DELETE CONTAINERS */}
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+          <button
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={handleDelete}
+          >
             ✕
           </button>
           {tasks.map((task, index) => (
@@ -127,6 +174,30 @@ function DashboardContainer(props) {
           )}
         </div>
       </div>
+      <dialog
+        id={`my_modal_${props.containerId}`}
+        className="modal modal-bottom sm:modal-middle"
+      >
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Update Title</h3>
+          <p className="py-4">
+            <input
+              className="input input-bordered w-full"
+              type="text"
+              defaultValue={title}
+              placeholder="Edit Title Here..."
+              onChange={(e) => setNewTitle(e.target.value)}
+            />
+          </p>
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn" onClick={handlePut}>
+                Update
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }
