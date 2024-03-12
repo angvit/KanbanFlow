@@ -3,7 +3,7 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import './Home.css'; // Import your CSS file
 import Slides from './Slides'; // Update the import path
-import KFBanner from 'C:/Users/noshi/KanbanFlow-Clone/frontend/src/pages/Home/KFBanner.png';
+import KFBanner from './KFBanner.png'
 
 function Home() {
   const { user } = useAuth0();
