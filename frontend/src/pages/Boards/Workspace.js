@@ -23,10 +23,9 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
   const handleCloseModal = () => {
     setModalOpen(false);
   }
-  
 
   const handlePost = ({ newBoard }) => {
-    const request = axios.post(`dashboard/${user.sub}`, newBoard);
+    const request = axios.post(`/${user.sub}`, newBoard);
     request
       .then((response) => {
         console.log(response.data);
@@ -111,9 +110,6 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
                 Board Title
               </label>
               <input
-                type="text"
-                id="boardTitle"
-                name="boardTitle"
                 value={newBoardTitle}
                 onChange={(e) => setNewBoardTitle(e.target.value)}
                 placeholder="Enter board title"
@@ -136,8 +132,6 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
                 Description
               </label>
               <textarea
-                id="boardDescription"
-                name="boardDescription"
                 value={newBoardDescription}
                 onChange={(e) => setNewBoardDescription(e.target.value)}
                 placeholder="Something creative here"
