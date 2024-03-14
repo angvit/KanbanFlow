@@ -6,7 +6,7 @@
 
 /* Apply styles to the hero section */
 .hero-section {
-  background-color: #242c37; /* Dark blue background */
+  background-color: transparent;
   color: #fff; /* White text */
   padding: 80px 20px;
   text-align: center;
@@ -82,10 +82,17 @@
 }
 
 .center-image {
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%; /* Set height to 100% for vertical centering */
 }
 
+.carousel-item img {
+  width: 100%; /* Adjust width as necessary, could also be a fixed width */
+  height: 100%; /* Adjust height to maintain aspect ratio */
+  object-fit: scale-down; 
+  object-position: center; /* Center the image within the container */
+}
 

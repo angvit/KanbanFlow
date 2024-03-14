@@ -18,12 +18,13 @@ function Home() {
           console.log(error);
         });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   return (
     <div className="main-section">
          <div className="center-image"> {/* Added a new div with 'center-image' class */}
-            <img src={KFBanner} alt="KanbanFlow Banner" style={{ width: '75%', height: 'auto' }} />
+         <img src={KFBanner} alt="KanbanFlow Banner" style={{ width: '75%', height: 'auto' }} />
           </div>
       <section className="hero-section">
         <div className="container mx-auto text-center"> {/* Added 'text-center' class */}
@@ -76,7 +77,7 @@ logic</p>
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contact Us</h2>
-          <p>Contact KanbanFlow Clone on Slack</p>
+          <p>Contact KanbanFlow Clone on KanbanFlowClone@gmail.com</p>
         </div>
       </section>
     </div>
