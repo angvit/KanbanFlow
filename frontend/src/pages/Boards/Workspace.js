@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 import BoardCard from "../../components/BoardCard/BoardCard";
 import "./Board.css";
 
 
 const Workspace = ({ workspace, updateWorkspaceData }) => {
+
+  const { user } = useAuth0();
 
   const [isModalOpen, setModalOpen] = useState(false); // state for modal visibility
   const [newBoardTitle, setNewBoardTitle] = useState('');
@@ -20,6 +24,17 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
     setModalOpen(false);
   }
 
+  const handlePost = ({ newBoard }) => {
+    const request = axios.post(`/${user.sub}`, newBoard);
+    request
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   const createNewBoard = (event) => {
     event.preventDefault(); // Prevent the default form submission
     const newBoard = {
@@ -29,6 +44,8 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
       workspaceId: selectedWorkspaceId,
       description: newBoardDescription,
     };
+
+    handlePost(newBoard);
     // Update the workspace data with the new board
     updateWorkspaceData({
       ...workspace,
@@ -93,9 +110,6 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
                 Board Title
               </label>
               <input
-                type="text"
-                id="boardTitle"
-                name="boardTitle"
                 value={newBoardTitle}
                 onChange={(e) => setNewBoardTitle(e.target.value)}
                 placeholder="Enter board title"
@@ -118,8 +132,6 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
                 Description
               </label>
               <textarea
-                id="boardDescription"
-                name="boardDescription"
                 value={newBoardDescription}
                 onChange={(e) => setNewBoardDescription(e.target.value)}
                 placeholder="Something creative here"
