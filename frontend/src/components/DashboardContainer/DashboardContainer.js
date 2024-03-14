@@ -50,12 +50,12 @@ function DashboardContainer(props) {
   return (
     <div className="pt-16"> {/* Add padding to account for the navbar height */}
       <div
-        className="card max-w-md h-auto overflow-auto bg-base-200 shadow-xl m-10"
+        className="card w-80 bg-base-200 m-10"
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
         <div className="card-body">
-          <h2 className="card-title mb-5">
+          <h2 className="card-title mb-2 text-xl" id="card-container">
             {props.title}
           </h2>
           {tasks.map((task, index) => (
@@ -80,21 +80,23 @@ function DashboardContainer(props) {
                 onChange={(e) => setTaskDescription(e.target.value)}
               ></textarea>
               <button
-                className="btn btn-primary card-title mt-5 w-full text-2xl"
-                onClick={saveCard}
+                className="btn btn-primary card-title mt-5 w-full text-xl"
+                onClick={() => {
+                  saveCard();
+                }}
               >
                 Add Task
               </button>
               <button
                 onClick={() => setInput(false)}
-                className="btn btn-error card-title mt-2 w-full text-2xl"
+                className="btn btn-error card-title mt-2 w-full text-xl"
               >
                 Cancel
               </button>
             </div>
           ) : (
             <button
-              className="btn btn-ghost card-title mt-5 text-2xl"
+              className="btn btn-ghost card-title mt-5 text-xl"
               onClick={addCard}
             >
               Add a Task

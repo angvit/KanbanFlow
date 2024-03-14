@@ -8,7 +8,7 @@ function LoginButton() {
     <div>
       {!isAuthenticated ? (
         <button
-          className="btn"
+          className="btn mr-1 btn-primary text-lg"
           onClick={() => loginWithRedirect()}
           disabled={isAuthenticated}
         >
