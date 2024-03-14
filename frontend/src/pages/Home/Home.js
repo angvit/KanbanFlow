@@ -18,6 +18,7 @@ function Home() {
           console.log(error);
         });
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   return (
@@ -76,7 +77,7 @@ logic</p>
       <section className="contact-section">
         <div className="container mx-auto">
           <h2>Contact Us</h2>
-          <p>Contact KanbanFlow Clone on Slack</p>
+          <p>Contact KanbanFlow Clone on KanbanFlowClone@gmail.com</p>
         </div>
       </section>
     </div>
