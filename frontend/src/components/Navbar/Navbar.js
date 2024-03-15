@@ -19,20 +19,22 @@ function Navbar() {
   const [boardTitle, setBoardTitle] = useState('');
   const [boardColor, setBoardColor] = useState('#ffffff'); // Default color
   const [boardDescription, setBoardDescription] = useState('');
-
-  console.log(user);
+  const { sub } = user || {};
 
   useEffect(() => {
+    if (user && sub) {
+      axios.get(`/workspaces/${user.sub}`)
+        .then((response) => {
+          setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
+          console.log('Workspaces set: ', response.data.workspaces);
+        })
+        .catch((error) => {
+          console.error("Error fetching workspaces: ", error);
+        });
+    }
     // This should ideally be called when the user logs in
-    axios.get(`workspaces/${user.sub}`)
-      .then((response) => {
-        setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
-        console.log('Workspaces set: ',response.data.workspaces);
-      })
-      .catch((error) => {
-        console.error("Error fetching workspaces: ", error);
-      });
-  }, [user.sub]); // Run the effect when user.sub changess
+
+  }, [user, sub]); // Run the effect when user and/or sub changess
 
   const createDefaultWorkspace = async () => {
     try {
@@ -104,7 +106,7 @@ function Navbar() {
     };
 
     try {
-      const response = await axios.post(`boards/${workspaceId}/boards`, newBoard);
+      const response = await axios.post(`/boards/${workspaceId}/boards`, newBoard);
       console.log(response.data);
       // Close the modal and clear form fields if necessary
       setIsModalOpen(false);
@@ -214,7 +216,7 @@ function Navbar() {
                       ></textarea>
 
                       {
-                          workspaces && workspaces.length > 0 ? (
+                        workspaces && workspaces.length > 0 ? (
                           <div className="form-control w-full max-w-xs">
                             <label className="label">
                               <span className="label-text">Select Workspace</span>
