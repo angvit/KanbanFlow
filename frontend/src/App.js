@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Rounter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Home from "./pages/Home/Home";
 import Board from "./pages/Boards/Board";
@@ -15,13 +15,12 @@ function App() {
 
   return (
     <div className="App">
-      <Rounter>
+      <Router>
         {error && <div> There is an Error: {error.message}</div>}
         {!error && isLoading && <Loading />}
         {!error && !isLoading && (
           <>
             <Navbar />
-            {/* Moving Nav just to dash board for now */}
             <Routes>
               <Route element={<Home />} path="/" />
               <Route element={<Board />} path="/boards" />
@@ -32,7 +31,7 @@ function App() {
             </Routes>
           </>
         )}
-      </Rounter>
+      </Router>
     </div>
   );
 }
