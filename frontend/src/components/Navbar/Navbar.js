@@ -33,7 +33,6 @@ function Navbar() {
         });
     }
     // This should ideally be called when the user logs in
-<<<<<<< HEAD
     axios.get(`workspaces/${user.sub}`)
       .then((response) => {
         setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
@@ -43,10 +42,6 @@ function Navbar() {
         console.error("Error fetching workspaces: ", error);
       });
   }); // Run the effect when user.sub changess
-=======
-
-  }, [user, sub]); // Run the effect when user and/or sub changess
->>>>>>> 1dcf0a37ebe9c5c945b6120749049e3ca46568e4
 
   const createDefaultWorkspace = async () => {
     try {
@@ -118,11 +113,7 @@ function Navbar() {
     };
 
     try {
-<<<<<<< HEAD
       const response = await axios.post(`dashboards/${user.sub}/${workspaceId}`, newBoard);
-=======
-      const response = await axios.post(`/boards/${workspaceId}/boards`, newBoard);
->>>>>>> 1dcf0a37ebe9c5c945b6120749049e3ca46568e4
       console.log(response.data);
       // Close the modal and clear form fields if necessary
       setIsModalOpen(false);
@@ -233,11 +224,7 @@ function Navbar() {
                       ></textarea>
 
                       {
-<<<<<<< HEAD
                         workspaces ? (
-=======
-                        workspaces && workspaces.length > 0 ? (
->>>>>>> 1dcf0a37ebe9c5c945b6120749049e3ca46568e4
                           <div className="form-control w-full max-w-xs">
                             <label className="label">
                               <span className="label-text">Select Workspace</span>
