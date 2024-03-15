@@ -27,12 +27,12 @@ function Navbar() {
     axios.get(`workspaces/${user.sub}`)
       .then((response) => {
         setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
-        console.log('Workspaces set: ',response.data.workspaces);
+        console.log('Workspaces set: ', response.data.workspaces);
       })
       .catch((error) => {
         console.error("Error fetching workspaces: ", error);
       });
-  }, [user.sub]); // Run the effect when user.sub changess
+  }); // Run the effect when user.sub changess
 
   const createDefaultWorkspace = async () => {
     try {
@@ -83,7 +83,7 @@ function Navbar() {
     let workspaceId = selectedWorkspaceId;
 
     // If no workspaces exist, create a default one
-    if (workspaces.length == 0) {
+    if (!workspaces || workspaces.length === 0) {
       const defaultWorkspace = await createDefaultWorkspace();
       if (defaultWorkspace) {
         workspaceId = defaultWorkspace.id;
@@ -104,10 +104,11 @@ function Navbar() {
     };
 
     try {
-      const response = await axios.post(`boards/${workspaceId}/boards`, newBoard);
+      const response = await axios.post(`dashboards/${user.sub}/${workspaceId}`, newBoard);
       console.log(response.data);
       // Close the modal and clear form fields if necessary
       setIsModalOpen(false);
+
       // Handle the board creation success, such as updating the UI or state
     } catch (error) {
       console.error("Error creating board: ", error);
@@ -214,7 +215,7 @@ function Navbar() {
                       ></textarea>
 
                       {
-                          workspaces && workspaces.length > 0 ? (
+                        workspaces ? (
                           <div className="form-control w-full max-w-xs">
                             <label className="label">
                               <span className="label-text">Select Workspace</span>

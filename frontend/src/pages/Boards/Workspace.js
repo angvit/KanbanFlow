@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
-import BoardCard from "../../components/BoardCard/BoardCard";
+import BoardCard from "./BoardCard";
 import "./Board.css";
-
+import { Link } from "react-router-dom";
 
 const Workspace = ({ workspace, updateWorkspaceData }) => {
 
   const { user } = useAuth0();
-
   const [isModalOpen, setModalOpen] = useState(false); // state for modal visibility
   const [newBoardTitle, setNewBoardTitle] = useState('');
   const [newBoardColor, setNewBoardColor] = useState('#FFFFFF');
@@ -24,8 +23,8 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
     setModalOpen(false);
   }
 
-  const handlePost = ({ newBoard }) => {
-    const request = axios.post(`/${user.sub}`, newBoard);
+  const handlePost = (newBoard) => {
+    const request = axios.post(`dashboards/${user.sub}/${workspace.id}`, newBoard);
     request
       .then((response) => {
         console.log(response.data);
@@ -38,8 +37,7 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
   const createNewBoard = (event) => {
     event.preventDefault(); // Prevent the default form submission
     const newBoard = {
-      id: Date.now(),
-      title: newBoardTitle || 'Untitled Board',
+      title: newBoardTitle ? newBoardTitle : "Untitled Board",
       color: newBoardColor,
       workspaceId: selectedWorkspaceId,
       description: newBoardDescription,
@@ -61,6 +59,8 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
 
   };
 
+  console.log(workspace.boards)
+
   return (
     <div className="workspace">
       <div className="boards-page-board-section mod-no-sidebar">
@@ -75,7 +75,9 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
         <ul className="board-section-list">
           {workspace.boards.map((board) => (
             <li key={board.id} className="board-section-list-item">
-              <BoardCard title={board.title} backgroundColor={board.color} />
+              <Link to={`dashboard/${workspace.id}/${board.id}`} >
+                <BoardCard title={board.title} backgroundColor={board.color} />
+              </Link>
             </li>
           ))}
           <li className="board-section-list-item">
@@ -90,75 +92,77 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
           </li>
         </ul>
       </div>
-      {isModalOpen && ( // Conditionally render the modal
-        <dialog open className="modal modal-bottom sm:modal-middle">
+      {
+        isModalOpen && ( // Conditionally render the modal
+          <dialog open className="modal modal-bottom sm:modal-middle">
 
-          <div className="modal-box">
-            <form onSubmit={createNewBoard}>
-              {/* Close button */}
+            <div className="modal-box">
+              <form onSubmit={createNewBoard}>
+                {/* Close button */}
+                <button
+                  type="button"
+                  className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                  onClick={handleCloseModal}
+                >✕</button>
+
+                {/* Form Title */}
+                <h3 className="font-bold text-lg">Creating a New Board</h3>
+
+                {/* Board Title Input */}
+                <label htmlFor="boardTitle" className="block text-sm font-medium text-gray-700 mt-4">
+                  Board Title
+                </label>
+                <input
+                  value={newBoardTitle}
+                  onChange={(e) => setNewBoardTitle(e.target.value)}
+                  placeholder="Enter board title"
+                  className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  required
+                />
+
+                {/* Board Background Color Picker */}
+                <label htmlFor="boardColor" className="block text-sm font-medium text-gray-700 mt-4">
+                  Background Color
+                </label>
+                <input
+                  value={newBoardColor}
+                  onChange={(e) => setNewBoardColor(e.target.value)}
+                  className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm"
+                />
+
+                {/* Board Description Input */}
+                <label htmlFor="boardDescription" className="block text-sm font-medium text-gray-700 mt-4">
+                  Description
+                </label>
+                <textarea
+                  value={newBoardDescription}
+                  onChange={(e) => setNewBoardDescription(e.target.value)}
+                  placeholder="Something creative here"
+                  className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  rows="3"
+                ></textarea>
+
+                {/* Modal Actions */}
+                <div className="modal-action mt-6">
+                  <button type="submit" className="btn">
+                    Create
+                  </button>
+                  <button type="button" className="btn" onClick={handleCloseModal}>
+                    Cancel
+                  </button>
+                </div>
+              </form>
               <button
-                type="button"
                 className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
                 onClick={handleCloseModal}
-              >✕</button>
-
-              {/* Form Title */}
-              <h3 className="font-bold text-lg">Creating a New Board</h3>
-
-              {/* Board Title Input */}
-              <label htmlFor="boardTitle" className="block text-sm font-medium text-gray-700 mt-4">
-                Board Title
-              </label>
-              <input
-                value={newBoardTitle}
-                onChange={(e) => setNewBoardTitle(e.target.value)}
-                placeholder="Enter board title"
-                className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                required
-              />
-
-              {/* Board Background Color Picker */}
-              <label htmlFor="boardColor" className="block text-sm font-medium text-gray-700 mt-4">
-                Background Color
-              </label>
-              <input
-                value={newBoardColor}
-                onChange={(e) => setNewBoardColor(e.target.value)}
-                className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm"
-              />
-
-              {/* Board Description Input */}
-              <label htmlFor="boardDescription" className="block text-sm font-medium text-gray-700 mt-4">
-                Description
-              </label>
-              <textarea
-                value={newBoardDescription}
-                onChange={(e) => setNewBoardDescription(e.target.value)}
-                placeholder="Something creative here"
-                className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                rows="3"
-              ></textarea>
-
-              {/* Modal Actions */}
-              <div className="modal-action mt-6">
-                <button type="submit" className="btn">
-                  Create
-                </button>
-                <button type="button" className="btn" onClick={handleCloseModal}>
-                  Cancel
-                </button>
-              </div>
-            </form>
-            <button
-              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-              onClick={handleCloseModal}
-            >
-              ✕
-            </button>
-          </div>
-        </dialog>
-      )}
-    </div>
+              >
+                ✕
+              </button>
+            </div>
+          </dialog>
+        )
+      }
+    </div >
   );
 };
 
