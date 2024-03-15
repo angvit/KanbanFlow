@@ -4,6 +4,10 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useParams } from "react-router-dom";
 
+// import { DndContext, closestCorners, useDroppable } from "@dnd-kit/core";
+// import { SortableContext, arrayMove } from "@dnd-kit/sortable";
+// import { verticalListSortingStrategy } from "@dnd-kit/sortable";
+
 function DashboardContainer(props) {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState(false);
@@ -16,17 +20,10 @@ function DashboardContainer(props) {
   const { workspaceId, id } = useParams();
 
   useEffect(() => {
-    const request = axios.get(
-      `/tasks/${user.sub}/${workspaceId}/${id}/${props.containerId}`
-    );
-    request
-      .then((response) => {
-        setTasks(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    if (props.tasks) {
+      setTasks(props.tasks);
+    }
+  }, [props.tasks]);
 
   const addCard = () => {
     setInput(true);
@@ -90,24 +87,13 @@ function DashboardContainer(props) {
     }
   };
 
-  const handleDrop = (event) => {
-    event.preventDefault();
-    console.log(event.dataTransfer.getData("application/json"));
-    const taskData = JSON.parse(event.dataTransfer.getData("application/json"));
-    setTasks([...tasks, taskData]);
-  };
-
-  const handleDragOver = (event) => {
-    event.preventDefault();
-  };
+  // const { setNodeRef } = useDroppable({
+  //   id: props.containerId,
+  // });
 
   return (
     <div id={`container_${props.containerId}`}>
-      <div
-        className="card w-80 bg-base-200 m-10"
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-      >
+      <div className="card w-80 bg-base-200 m-10">
         <div className="card-body">
           <h2 className="card-title mb-2 text-xl" id="card-container">
             <button
@@ -127,15 +113,19 @@ function DashboardContainer(props) {
           >
             ✕
           </button>
-          {tasks.map((task, index) => (
-            <TaskCard
-              title={task.title}
-              task={task.description}
-              id={task.id}
-              key={index}
-              containerId={props.containerId}
-            />
-          ))}
+          {/* <SortableContext id={props.containerId} items={tasks} strategy={verticalListSortingStrategy}> */}
+            {tasks.map((task, index) => (
+              // <div ref={setNodeRef}>
+                <TaskCard
+                  title={task.title}
+                  task={task.description}
+                  id={task.id}
+                  key={task.id}
+                  containerId={props.containerId}
+                />
+              // </div>
+            ))}
+          {/* </SortableContext> */}
           {input ? (
             <div>
               <input

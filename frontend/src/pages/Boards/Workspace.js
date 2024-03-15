@@ -43,7 +43,6 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
     setModalOpen(false);
 
   };
-
   return (
     <div className="workspace">
       <div className="boards-page-board-section mod-no-sidebar">

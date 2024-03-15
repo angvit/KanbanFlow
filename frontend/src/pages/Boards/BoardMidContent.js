@@ -11,7 +11,6 @@ export default function BoardMidContent({ workspaces, setWorkspaces }) {
         );
         setWorkspaces(updatedWorkspaces);
     };
-    
     return (
         <div className='all-boards'>
             <div className='recent-view'>
