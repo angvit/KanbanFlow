@@ -18,8 +18,11 @@ router
         const dashboardSnapshot = await workspace
           .collection("dashboards")
           .get();
-        const dashboard = dashboardSnapshot.docs.map((doc) => doc.data());
-
+        const dashboard = dashboardSnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        console.log("ALERT Dashboard: ", dashboard.id);
         return {
           id: doc.id,
           ...doc.data(),
