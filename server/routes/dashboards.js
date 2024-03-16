@@ -16,6 +16,18 @@ router.route("/:userid/:id").get(async (req, res) => {
 
   console.log("Dashboards: ", dashboardList);
   res.send(dashboardList);
-});
+})
+
+  .post(async (req, res) => {
+    const userId = req.params.userid;
+    const workspaceId = req.params.id;
+    const userDoc = await User.doc(userId).get();
+    const workspace = await userDoc.ref.collection("workspaces").doc(workspaceId).get();
+    const newBoard = await workspace.ref.collection("dashboards").add(req.body);
+    console.log(newBoard.id);
+    res.send({ message: newBoard.id });
+  })
+
+
 
 module.exports = router;

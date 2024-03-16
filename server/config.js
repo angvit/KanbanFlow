@@ -1,13 +1,13 @@
 const firebase = require("firebase");
-
+require("dotenv").config();
 const firebaseConfig = {
-  apiKey: "AIzaSyCLfGORVR1wU8bz9swMTO6kNKLObMq8eqs",
-  authDomain: "kanbanflow-clone.firebaseapp.com",
-  projectId: "kanbanflow-clone",
-  storageBucket: "kanbanflow-clone.appspot.com",
-  messagingSenderId: "720847447815",
-  appId: "1:720847447815:web:3875e02f7d65e0453a07a2",
-  measurementId: "G-HFTGX3QFGT",
+  apiKey: process.env.FIREBASE_APIKEY,
+  authDomain: process.env.FIREBASE_AUTHDOMAIN,
+  projectId: process.env.FIREBASE_PROJECTID,
+  storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.FIREBASE_APPID,
+  measurementId: process.env.FIREBASE_MEASUREMENTID,
 };
 
 firebase.initializeApp(firebaseConfig);
