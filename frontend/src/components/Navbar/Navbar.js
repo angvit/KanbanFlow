@@ -18,6 +18,7 @@ function Navbar() {
   const [boardTitle, setBoardTitle] = useState("");
   const [boardColor, setBoardColor] = useState("#ffffff"); // Default color
   const [boardDescription, setBoardDescription] = useState("");
+
   const { sub } = user || {};
 
   useEffect(() => {
@@ -31,17 +32,17 @@ function Navbar() {
         .catch((error) => {
           console.error("Error fetching workspaces: ", error);
         });
+      axios
+        .get(`workspaces/${user.sub}`)
+        .then((response) => {
+          setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
+          console.log("Workspaces set: ", response.data.workspaces);
+        })
+        .catch((error) => {
+          console.error("Error fetching workspaces: ", error);
+        });
     }
     // This should ideally be called when the user logs in
-    axios
-      .get(`workspaces/${user.sub}`)
-      .then((response) => {
-        setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
-        console.log("Workspaces set: ", response.data.workspaces);
-      })
-      .catch((error) => {
-        console.error("Error fetching workspaces: ", error);
-      });
   }); // Run the effect when user.sub changess
 
   const createDefaultWorkspace = async () => {
