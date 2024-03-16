@@ -47,7 +47,7 @@ function Home() {
             </div>
             {/* Feature 2 */}
             <div className="feature-card">
-              <h3>Track Porjects</h3>
+              <h3>Track Projects</h3>
               <p>Allows users to monitor and oversee tasks. This feature enables users to effortlessly stay on top of project progress, deadlines, and milestones, streamlining the project tracking process for increased productivity and success.</p>
             </div>
             {/* Feature 3 */}
