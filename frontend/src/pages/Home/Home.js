@@ -43,17 +43,17 @@ function Home() {
             {/* Feature 1 */}
             <div className="feature-card">
               <h3>Create Boards</h3>
-              <p> Allows users to easily organize and categorize their content. With just a few clicks, users can set up personalized boards to keep their information neatly arranged, enhancing efficiency and accessibility in managing their data or projects.</p>
+              <p> Allows users to easily organize and categorize their content. With just a few clicks, users can set up personalized boards to keep their information neatly arranged, enhancing efficiency and accessibility in managing their projects.</p>
             </div>
             {/* Feature 2 */}
             <div className="feature-card">
               <h3>Track Projects</h3>
-              <p>Allows users to monitor and oversee tasks. This feature enables users to effortlessly stay on top of project progress, deadlines, and milestones, streamlining the project tracking process for increased productivity and success.</p>
+              <p>Allows users to monitor and oversee tasks. This feature enables users to stay on top of project progress, deadlines, and milestones, streamlining the project tracking process for increased productivity and success.</p>
             </div>
             {/* Feature 3 */}
             <div className="feature-card">
               <h3>Save the Process</h3>
-              <p>Allows user to preserve their work effortlessly. With a simple click or command, users can save their current progress, ensuring that valuable data, configurations, or edits are securely stored. This allows users to pick up right where they left off without any hassle. </p>
+              <p>Allows user to preserve their work effortlessly. With a simple click, users can save their current progress, ensuring that valuable data, configurations, or edits are securely stored. This allows users to pick up right where they left off without any hassle. </p>
             </div>
           </div>
         </div>
