@@ -1,12 +1,14 @@
 /* Apply styles to the main section */
 .main-section {
   padding: 40px 20px;
+ /* background-color: rgb(46, 46, 47); */
+
 }
 
 /* Apply styles to the hero section */
 .hero-section {
   background-color: transparent;
-  color: #ffffff; /* White text */
+  color: #a9aeb7; /* White text */
   padding: 80px 20px;
   text-align: center;
 }
@@ -15,6 +17,7 @@
   font-size: 3rem; /* Large font size */
   font-weight: bold; /* Bold text */
   margin-bottom: 20px;
+  color: #a9aeb7;
 }
 
 .hero-section p {
@@ -28,19 +31,22 @@
   text-align: center;
 }
 
+ 
 .features-section h2 {
   font-size: 2.5rem; /* Large font size */
   font-weight: bold; /* Bold text */
   margin-bottom: 40px;
+  color: #a9aeb7;
 }
 
 /* Apply styles to the individual feature cards */
 .feature-card {
-  background-color: #f3f4f6; /* Light gray background */
+  background-color: #f1f1f1; /* Light gray background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
   padding: 20px;
   margin-bottom: 20px;
+  color: #82858a; 
 }
 
 .feature-card h3 {
@@ -51,13 +57,13 @@
 
 .feature-card p {
   font-size: 1rem; /* Small font size */
-  color: #6b7280; /* Gray text */
+  color: #82858a; /* Gray text */
 }
 
 /* Apply styles to the about section */
 .about-section {
-  background-color: #edf2f7; /* Light blue background */
-  color: #4b5563; /* Dark gray text */
+  background-color: #f1f1f1; 
+  color: #82858a; /* Dark gray text */
   padding: 60px 20px;
   text-align: center;
 }
@@ -78,6 +84,11 @@
   font-size: 2.5rem; /* Large font size */
   font-weight: bold; /* Bold text */
   margin-bottom: 40px;   
+  color: #a9aeb7;
+}
+
+.contact-section p {
+  color: #a9aeb7;
 }
 
 .center-image {
