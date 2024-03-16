@@ -24,7 +24,10 @@ function App() {
             <Routes>
               <Route element={<Home />} path="/" />
               <Route element={<Board />} path="/boards" />
-              <Route element={<Dashboard />} path="/dashboard/:workspaceId/:id" />
+              <Route
+                element={<Dashboard />}
+                path="/boards/dashboard/:workspaceId/:id"
+              />
               <Route element={<Login />} path="/login" />
               <Route element={<Register />} path="/register" />
               <Route element={<Test />} path="/test" />
