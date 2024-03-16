@@ -16,32 +16,6 @@ export default function BoardMidContent({ workspaces, setWorkspaces }) {
         setWorkspaces(updatedWorkspaces);
     };
 
-    const handleGetWorkspace = () => {
-        const request = axios.get(`workspaces/${user.sub}`);
-        request
-            .then((response) => {
-                setWorkspaces(response.data);
-                console.log(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
-
-    const handlePostWorkspace = () => {
-        const workspaceData = { name: "Default name" };
-        const request = axios.post(`workspaces/${user.sub}`, workspaceData);
-        request
-            .then((response) => {
-                console.log(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
-
-
-
     return (
         <div className='all-boards'>
             <div className='recent-view'>
