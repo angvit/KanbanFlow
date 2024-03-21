@@ -1,9 +1,29 @@
-# KanbanFlow-Clone
+# KanbanFlow Clone
 
-KanbanFlow Clone is a simplified, web-based project management application inspired
-by Trello. It aims to implement the core functionalities of a Kanban board to allow users to manage
-their tasks and projects efficiently. The application will provide an intuitive interface for users to
-create boards, lists, and cards that represent different stages of a project workflow. With a focus
-on simplicity and usability, KanbanFlow Clone will be developed using basic HTML, CSS, and
-JavaScript for the frontend, with a Node.js backend to handle data persistence and application
-logic.
+KanbanFlow Clone is a simplified, web-based project management application inspired by Trello.
+
+It implements the core functionalities of a Kanban board to allow users to manage their tasks and projects efficiently.
+
+The application provides an intuitive interface for users to create boards, lists, and cards that represent different stages of a project workflow.
+
+## Features
+
+- User Authentication: Secure login and registration system to manage user accounts using Auth0.
+- Board: A homepage to view and access all the user's workspaces and boards.
+- Board/Workspace Management: Ability to create and view boards.
+- Dashboard: A page to view and access all the user's tasks.
+- Drap and Drop: Users can drag and drop cards between lists to update their status.
+- Data Persistence: All data (users, workspaces, boards, cards) will be stored and managed in an Express.js backend with a Firebase database.
+
+## Tech Stack
+
+**Client:** React, DaisyUI, TailwindCSS, Auth0
+
+**Server:** Express.js, Nodemon, Firebase
+
+## Contributors
+
+- [@angvit](https://www.github.com/angvit)
+- [@JoanG5](https://www.github.com/JoanG5)
+- [@umidar](https://www.github.com/umidar)
+- [@noshin7](https://www.github.com/noshin7)
