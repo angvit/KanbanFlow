@@ -61,14 +61,17 @@ function Navbar() {
     }
   };
 
+  // Alter the state of dropdown buttons "Create Board" & "Create Workspace" 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  // Alter the state of board modal  
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  // Alter the state of workspace modal 
   const toggleCreateWorkspaceModal = () => {
     setIsWorkspaceModalOpen(!isWorkspaceModalOpen);
   };

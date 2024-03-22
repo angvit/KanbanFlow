@@ -24,7 +24,7 @@ function Home() {
   return (
     <div className="main-section">
          <div className="center-image"> {/* Added a new div with 'center-image' class */}
-            <img src={KFBanner} alt="KanbanFlow Banner" style={{ width: '75%', height: 'auto' }} />
+            <img src={KFBanner} alt="KanbanFlow Banner" style={{ width: '68%', height: 'auto' }} />
           </div>
       <section className="hero-section">
         <div className="container mx-auto text-center"> {/* Added 'text-center' class */}
@@ -47,7 +47,7 @@ function Home() {
             </div>
             {/* Feature 2 */}
             <div className="feature-card">
-              <h3>Track Porjects</h3>
+              <h3>Track Projects</h3>
               <p>Allows users to monitor and oversee tasks. This feature enables users to effortlessly stay on top of project progress, deadlines, and milestones, streamlining the project tracking process for increased productivity and success.</p>
             </div>
             {/* Feature 3 */}

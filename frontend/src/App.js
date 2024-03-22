@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Loading from "./components/Loading/Loading";
 import Test from "./pages/Test";
+import LoggedIn from "./pages/LoggedIn";
 
 function App() {
   const { isLoading, error } = useAuth0();
@@ -23,14 +24,17 @@ function App() {
             <Navbar />
             <Routes>
               <Route element={<Home />} path="/" />
-              <Route element={<Board />} path="/boards" />
-              <Route
-                element={<Dashboard />}
-                path="/boards/dashboard/:workspaceId/:id"
-              />
-              <Route element={<Login />} path="/login" />
+
+              <Route element={<LoggedIn />} path="/">
+                <Route element={<Board />} path="/boards" />
+                <Route
+                  element={<Dashboard />}
+                  path="/boards/dashboard/:workspaceId/:id"
+                />
+              </Route>
+              {/* <Route element={<Login />} path="/login" />
               <Route element={<Register />} path="/register" />
-              <Route element={<Test />} path="/test" />
+              <Route element={<Test />} path="/test" /> */}
             </Routes>
           </>
         )}

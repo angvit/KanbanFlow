@@ -16,34 +16,9 @@ export default function BoardMidContent({ workspaces, setWorkspaces }) {
         setWorkspaces(updatedWorkspaces);
     };
 
-    const handleGetWorkspace = () => {
-        const request = axios.get(`workspaces/${user.sub}`);
-        request
-            .then((response) => {
-                setWorkspaces(response.data);
-                console.log(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
-
-    const handlePostWorkspace = () => {
-        const workspaceData = { name: "Default name" };
-        const request = axios.post(`workspaces/${user.sub}`, workspaceData);
-        request
-            .then((response) => {
-                console.log(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
-
-
-
     return (
         <div className='all-boards'>
+            {/*
             <div className='recent-view'>
                 <div><h3 className="boards-page-board-section-header-name">Recently viewed</h3></div>
                 <div>
@@ -53,6 +28,7 @@ export default function BoardMidContent({ workspaces, setWorkspaces }) {
                     </ul>
                 </div>
             </div>
+    */}
             <div className='user-workspaces'>
                 <h3 className="boards-page-section-header-name">YOUR WORKSPACES</h3>
                 {workspaces.map(workspace => (
