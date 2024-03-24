@@ -1,3 +1,11 @@
+<h1 align="center">
+  <br>
+  <img src="frontend\src\pages\Home\KFBanner.png" alt="KanbanFlow Clone" width="200">
+  <br>
+  KanbanFlow Clone
+  <br>
+</h1>
+
 # KanbanFlow Clone
 
 KanbanFlow Clone is a simplified, web-based project management application inspired by Trello.
@@ -16,12 +24,13 @@ The application provides an intuitive interface for users to create boards, list
 - Data Persistence: All data (users, workspaces, boards, cards) will be stored and managed in an Express.js backend with a Firebase database.
 
 ## Technologies Used
-| Front End | Back End |
-| --------- | -------- |
-| [React](https://react.dev/) |[Node](https://nodejs.org/docs/latest/api/) / [Express](https://expressjs.com/)|
-| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |[Firebase](https://firebase.google.com/)|
-| [Tailwind](https://tailwindcss.com/)||
-|[DaisyUI](https://daisyui.com/)||
+
+| Front End                                                             | Back End                                                                        |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [React](https://react.dev/)                                           | [Node](https://nodejs.org/docs/latest/api/) / [Express](https://expressjs.com/) |
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Firebase](https://firebase.google.com/)                                        |
+| [Tailwind](https://tailwindcss.com/)                                  |                                                                                 |
+| [DaisyUI](https://daisyui.com/)                                       |                                                                                 |
 
 ## Contributors
 
