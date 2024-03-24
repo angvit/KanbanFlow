@@ -30,6 +30,15 @@ The application provides an intuitive interface for users to create boards, list
 | [Tailwind](https://tailwindcss.com/)                                  |                                                                                 |
 | [DaisyUI](https://daisyui.com/)                                       |                                                                                 |
 
+## Images
+
+<h1 align="center">   
+  <img src="frontend\src\assets\CIS_4093_KanbanClone_Home_Page.gif" alt="KanbanFlow Clone" >
+  <img src="frontend\src\assets\CIS_4093_KanbanClone_Boards.gif" alt="KanbanFlow Clone" >
+  <img src="frontend\src\assets\CIS_4093_KanbanClone_Dashboard.gif" alt="KanbanFlow Clone" >
+  <img src="frontend\src\assets\KanbanFlow_Boards.png" alt="KanbanFlow Clone" >
+</h1>
+
 ## Contributors
 
 - [@angvit](https://www.github.com/angvit)
