@@ -5,7 +5,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import BoardCard from "./BoardCard";
 import "./Board.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 const Workspace = ({ workspace, updateWorkspaceData }) => {
   const { user } = useAuth0();

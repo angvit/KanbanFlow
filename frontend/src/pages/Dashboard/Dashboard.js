@@ -9,10 +9,11 @@ import {
   arrayMove,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
+import Loading from "../../components/Loading/Loading";
 
 function Dashboard() {
-  const [containers, setContainers] = useState([]);
-  const [tasks, setTasks] = useState([]);
+  const [containers, setContainers] = useState([false]);
+  const [tasks, setTasks] = useState([false]);
   const [tasksByContainer, setTasksByContainer] = useState({});
   const [addContainer, setAddContainer] = useState(false);
   const [containerTitle, setContainerTitle] = useState("");
@@ -84,6 +85,10 @@ function Dashboard() {
     });
   };
 
+  if (containers.length === 1 && tasks.length === 1 && (containers[0] === false || tasks[0] === false)) {
+    return <Loading />;
+  }
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -93,14 +98,14 @@ function Dashboard() {
             collisionDetection={closestCorners}
             onDragEnd={handleDragEnd}
           > */}
-            {containers.map((container, index) => (
-              <DashboardContainer
-                title={container.title}
-                containerId={container.id}
-                key={index}
-                tasks={tasksByContainer[container.id]}
-              />
-            ))}
+          {containers.map((container, index) => (
+            <DashboardContainer
+              title={container.title}
+              containerId={container.id}
+              key={index}
+              tasks={tasksByContainer[container.id]}
+            />
+          ))}
           {/* </DndContext> */}
           {addContainer ? (
             <div className="m-10 mr-10">
