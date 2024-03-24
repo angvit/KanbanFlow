@@ -12,7 +12,7 @@ The application provides an intuitive interface for users to create boards, list
 - Board: A homepage to view and access all the user's workspaces and boards.
 - Board/Workspace Management: Ability to create and view boards.
 - Dashboard: A page to view and access all the user's tasks.
-- Drap and Drop: Users can drag and drop cards between lists to update their status.
+- Drag and Drop: Users can drag and drop cards between lists to update their status.
 - Data Persistence: All data (users, workspaces, boards, cards) will be stored and managed in an Express.js backend with a Firebase database.
 
 ## Technologies Used
