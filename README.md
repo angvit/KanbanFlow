@@ -6,8 +6,6 @@
   <br>
 </h1>
 
-# KanbanFlow Clone
-
 KanbanFlow Clone is a simplified, web-based project management application inspired by Trello.
 
 It implements the core functionalities of a Kanban board to allow users to manage their tasks and projects efficiently.
