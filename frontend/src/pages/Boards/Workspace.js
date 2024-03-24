@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import BoardCard from "./BoardCard";
@@ -95,7 +94,7 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
               className="card w-50 bg-primary shadow-lg board-card"
               onClick={handleOpenModal}
             >
-              <div className="card-body board-card-body">
+              <div className="card-body board-card-body shadow-lg">
                 <h2 className="card-title text-white">Create New Board</h2>
               </div>
             </button>
@@ -134,7 +133,7 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
               />
 
               {/* Board Background Color Picker */}
-              <label
+              {/*<label
                 htmlFor="boardColor"
                 className="block text-sm font-medium text-gray-700 mt-4"
               >
@@ -144,7 +143,7 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
                 value={newBoardColor}
                 onChange={(e) => setNewBoardColor(e.target.value)}
                 className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm"
-              />
+              />}
 
               {/* Board Description Input */}
               <label
@@ -156,7 +155,7 @@ const Workspace = ({ workspace, updateWorkspaceData }) => {
               <textarea
                 value={newBoardDescription}
                 onChange={(e) => setNewBoardDescription(e.target.value)}
-                placeholder="Something creative here"
+                placeholder="Something creative here..."
                 className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 rows="3"
               ></textarea>

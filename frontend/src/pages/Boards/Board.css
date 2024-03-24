@@ -42,10 +42,18 @@
 .board-card {
   display: flex;
   cursor: pointer;
+  min-height: 150px;
+  max-height: 150px;
+  vertical-align: middle;
 }
 
 .board-card-body {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: center;
+  height: 100%;
 }
 
 .board-section-list {

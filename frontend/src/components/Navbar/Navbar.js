@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "../Login/LoginButton";
 import LogoutButton from "../Login/LogoutButton";
-import Workspace from "../../pages/Boards/Workspace";
 import axios from "axios";
 
 function Navbar() {
@@ -26,7 +25,7 @@ function Navbar() {
       axios
         .get(`/workspaces/${user.sub}`)
         .then((response) => {
-          setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
+          setWorkspaces(response.data.workspaces);
           console.log("Workspaces set: ", response.data.workspaces);
         })
         .catch((error) => {
@@ -35,7 +34,7 @@ function Navbar() {
       axios
         .get(`workspaces/${user.sub}`)
         .then((response) => {
-          setWorkspaces(response.data.workspaces); // Adjust depending on your API response structure
+          setWorkspaces(response.data.workspaces);
           console.log("Workspaces set: ", response.data.workspaces);
         })
         .catch((error) => {
@@ -218,15 +217,6 @@ function Navbar() {
                         required
                       />
 
-                      {/* Board Background Color Picker */}
-                      <label
-                        htmlFor="boardColor"
-                        className="block text-sm font-medium text-gray-700 mt-4"
-                      >
-                        Background Color
-                      </label>
-                      <input className="mt-2 p-2 block w-full rounded-md border-gray-300 shadow-sm" />
-
                       {/* Board Description Input */}
                       <label
                         htmlFor="boardDescription"
@@ -264,7 +254,7 @@ function Navbar() {
                           </select>
                         </div>
                       ) : (
-                        <p>Nothing here</p>
+                        <></>
                       )}
 
                       {/* Modal Actions */}

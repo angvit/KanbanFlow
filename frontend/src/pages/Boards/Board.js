@@ -2,6 +2,7 @@ import "./Board.css";
 import React, { useState } from "react";
 import BoardSideBar from "./BoardSideBar";
 import BoardMidContent from "./BoardMidContent";
+import Loading from "../../components/Loading/Loading";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import axios from "axios";
@@ -27,14 +28,21 @@ export default function Board() {
             <div className="browser-container">
                 <div className="surface">
                     <main className="content-boundary">
-                        <div className="content-wrapper">
-                            <div className="board-left-side-content">
-                                <BoardSideBar workspaces={workspaces} />
+                        {workspaces.length > 0 ? (
+                            <div className="content-wrapper">
+                                <div className="board-left-side-content">
+                                    <BoardSideBar workspaces={workspaces} />
+                                </div>
+                                <div className="board-middle-content">
+                                    <BoardMidContent workspaces={workspaces} setWorkspaces={setWorkspaces} />
+                                </div>
                             </div>
-                            <div className="board-middle-content">
-                                <BoardMidContent workspaces={workspaces} setWorkspaces={setWorkspaces} />
+
+                        ) : (
+                            <div className="empty-state">
+                                <Loading />
                             </div>
-                        </div>
+                        )}
                     </main>
                 </div>
             </div>

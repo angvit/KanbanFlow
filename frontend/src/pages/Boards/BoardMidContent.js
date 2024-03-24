@@ -1,5 +1,4 @@
 import React from 'react';
-import BoardCard from './BoardCard';
 import Workspace from './Workspace';
 import './Board.css';
 import axios from "axios";
