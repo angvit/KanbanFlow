@@ -25,10 +25,11 @@ The application provides an intuitive interface for users to create boards, list
 
 | Front End                                                             | Back End                                                                        |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [React](https://react.dev/)                                           | [Node](https://nodejs.org/docs/latest/api/) / [Express](https://expressjs.com/) |
-| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Firebase](https://firebase.google.com/)                                        |
-| [Tailwind](https://tailwindcss.com/)                                  |                                                                                 |
+| [React](https://react.dev/)                                           | [Node](https://nodejs.org/en)| 
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Express](https://expressjs.com/) |
+| [Tailwind](https://tailwindcss.com/)                                  | [Firebase](https://firebase.google.com/)                                        |
 | [DaisyUI](https://daisyui.com/)                                       |                                                                                 |
+| [Auth0](https://auth0.com/)|||
 
 ## Images
 
