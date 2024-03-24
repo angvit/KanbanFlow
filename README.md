@@ -33,10 +33,10 @@ The application provides an intuitive interface for users to create boards, list
 ## Images
 
 <h1 align="center">   
-  <img src="frontend\src\assets\CIS_4093_KanbanClone_Home_Page.gif" alt="KanbanFlow Clone" >
-  <img src="frontend\src\assets\CIS_4093_KanbanClone_Boards.gif" alt="KanbanFlow Clone" >
-  <img src="frontend\src\assets\CIS_4093_KanbanClone_Dashboard.gif" alt="KanbanFlow Clone" >
-  <img src="frontend\src\assets\KanbanFlow_Boards.png" alt="KanbanFlow Clone" >
+  <img src="frontend\src\assets\CIS_4093_KanbanClone_Home_Page.gif" alt="KanbanFlow Clone Home Page" >
+  <img src="frontend\src\assets\CIS_4093_KanbanClone_Boards.gif" alt="KanbanFlow Clone Boards gif" >
+  <img src="frontend\src\assets\CIS_4093_KanbanClone_Dashboard.gif" alt="KanbanFlow Clone Dashboard Page" >
+  <img src="frontend\src\assets\CIS_4093_KanbanClone_Boards" alt="KanbanFlow Clone Boards picture" >
 </h1>
 
 ## Contributors
