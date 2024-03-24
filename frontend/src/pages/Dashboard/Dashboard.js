@@ -12,8 +12,8 @@ import {
 import Loading from "../../components/Loading/Loading";
 
 function Dashboard() {
-  const [containers, setContainers] = useState([false]);
-  const [tasks, setTasks] = useState([false]);
+  const [containers, setContainers] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [tasksByContainer, setTasksByContainer] = useState({});
   const [addContainer, setAddContainer] = useState(false);
   const [containerTitle, setContainerTitle] = useState("");
@@ -85,9 +85,9 @@ function Dashboard() {
     });
   };
 
-  if (containers.length === 1 && tasks.length === 1 && (containers[0] === false || tasks[0] === false)) {
-    return <Loading />;
-  }
+  // if (containers.length === 0) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="drawer lg:drawer-open">

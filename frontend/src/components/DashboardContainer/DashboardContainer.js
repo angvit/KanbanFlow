@@ -71,7 +71,7 @@ function DashboardContainer(props) {
   };
 
   const handleDelete = () => {
-    const choice = window.confirm("Are you sure you want to delete this task?");
+    const choice = window.confirm("Are you sure you want to delete this list?");
     if (choice) {
       const request = axios.delete(
         `/dashboard_containers/${user.sub}/${workspaceId}/${id}/${props.containerId}`
@@ -114,17 +114,17 @@ function DashboardContainer(props) {
             ✕
           </button>
           {/* <SortableContext id={props.containerId} items={tasks} strategy={verticalListSortingStrategy}> */}
-            {tasks.map((task, index) => (
-              // <div ref={setNodeRef}>
-                <TaskCard
-                  title={task.title}
-                  task={task.description}
-                  id={task.id}
-                  key={task.id}
-                  containerId={props.containerId}
-                />
-              // </div>
-            ))}
+          {tasks.map((task, index) => (
+            // <div ref={setNodeRef}>
+            <TaskCard
+              title={task.title}
+              task={task.description}
+              id={task.id}
+              key={task.id}
+              containerId={props.containerId}
+            />
+            // </div>
+          ))}
           {/* </SortableContext> */}
           {input ? (
             <div>
@@ -193,4 +193,3 @@ function DashboardContainer(props) {
 }
 
 export default DashboardContainer;
-

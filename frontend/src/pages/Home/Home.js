@@ -24,7 +24,7 @@ function Home() {
   return (
     <div className="main-section">
          <div className="center-image"> {/* Added a new div with 'center-image' class */}
-            <img src={KFBanner} alt="KanbanFlow Banner" style={{ width: '68%', height: 'auto' }} />
+            <img src={KFBanner} alt="KanbanFlow Banner" style={{ width: '38%', height: 'auto' }} />
           </div>
       <section className="hero-section">
         <div className="container mx-auto text-center"> {/* Added 'text-center' class */}
