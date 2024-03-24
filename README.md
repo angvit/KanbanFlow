@@ -1,4 +1,10 @@
-# KanbanFlow Clone
+<h1 align="center">
+  <br>
+  <img src="frontend\src\pages\Home\KFBanner.png" alt="KanbanFlow Clone" width="200">
+  <br>
+  KanbanFlow Clone
+  <br>
+</h1>
 
 KanbanFlow Clone is a simplified, web-based project management application inspired by Trello.
 
@@ -12,16 +18,17 @@ The application provides an intuitive interface for users to create boards, list
 - Board: A homepage to view and access all the user's workspaces and boards.
 - Board/Workspace Management: Ability to create and view boards.
 - Dashboard: A page to view and access all the user's tasks.
-- Drap and Drop: Users can drag and drop cards between lists to update their status.
+- Drag and Drop: Users can drag and drop cards between lists to update their status.
 - Data Persistence: All data (users, workspaces, boards, cards) will be stored and managed in an Express.js backend with a Firebase database.
 
 ## Technologies Used
-| Front End | Back End |
-| --------- | -------- |
-| [React](https://react.dev/) |[Node](https://nodejs.org/docs/latest/api/) / [Express](https://expressjs.com/)|
-| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |[Firebase](https://firebase.google.com/)|
-| [Tailwind](https://tailwindcss.com/)||
-|[DaisyUI](https://daisyui.com/)||
+
+| Front End                                                             | Back End                                                                        |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [React](https://react.dev/)                                           | [Node](https://nodejs.org/docs/latest/api/) / [Express](https://expressjs.com/) |
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Firebase](https://firebase.google.com/)                                        |
+| [Tailwind](https://tailwindcss.com/)                                  |                                                                                 |
+| [DaisyUI](https://daisyui.com/)                                       |                                                                                 |
 
 ## Contributors
 
