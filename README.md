@@ -1,4 +1,5 @@
-<p align="center">
+<h1 align="center">
+  <br>
   <img src="frontend\src\pages\Home\KFBanner.png" alt="KanbanFlow Clone" width="200">
 </p>
 
@@ -21,13 +22,13 @@ The application provides an intuitive interface for users to create boards, list
 
 ## Technologies Used
 
-| Front End                                                             | Back End                                 |
-| --------------------------------------------------------------------- | ---------------------------------------- | --- |
-| [React](https://react.dev/)                                           | [Node](https://nodejs.org/en)            |
-| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Express](https://expressjs.com/)        |
-| [Tailwind](https://tailwindcss.com/)                                  | [Firebase](https://firebase.google.com/) |
-| [DaisyUI](https://daisyui.com/)                                       |                                          |
-| [Auth0](https://auth0.com/)                                           |                                          |     |
+| Front End                                                             | Back End                                                                        |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [React](https://react.dev/)                                           | [Node](https://nodejs.org/en)| 
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Express](https://expressjs.com/) |
+| [Tailwind](https://tailwindcss.com/)                                  | [Firebase](https://firebase.google.com/)                                        |
+| [DaisyUI](https://daisyui.com/)                                       |                                                                                 |
+| [Auth0](https://auth0.com/)|||
 
 ## Images
 
