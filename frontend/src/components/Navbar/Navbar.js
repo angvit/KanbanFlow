@@ -80,7 +80,6 @@ function Navbar() {
       name: workspaceName,
       description: workspaceDescription,
     };
-
     axios
       .post(`workspaces/${user.sub}`, workspaceData)
       .then((response) => {

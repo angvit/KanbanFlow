@@ -15,11 +15,13 @@ The application provides an intuitive interface for users to create boards, list
 - Drap and Drop: Users can drag and drop cards between lists to update their status.
 - Data Persistence: All data (users, workspaces, boards, cards) will be stored and managed in an Express.js backend with a Firebase database.
 
-## Tech Stack
-
-**Client:** React, DaisyUI, TailwindCSS, Auth0
-
-**Server:** Express.js, Nodemon, Firebase
+## Technologies Used
+| Front End | Back End |
+| --------- | -------- |
+| [React](https://react.dev/) |[Node](https://nodejs.org/docs/latest/api/) / [Express](https://expressjs.com/)|
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |[Firebase](https://firebase.google.com/)|
+| [Tailwind](https://tailwindcss.com/)||
+|[DaisyUI](https://daisyui.com/)||
 
 ## Contributors
 
