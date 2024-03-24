@@ -1,10 +1,8 @@
-<h1 align="center">
-  <br>
+<p align="center">
   <img src="frontend\src\pages\Home\KFBanner.png" alt="KanbanFlow Clone" width="200">
-  <br>
-  KanbanFlow Clone
-  <br>
-</h1>
+</p>
+
+<h1 align="center">KanbanFlow Clone</h1>
 
 KanbanFlow Clone is a simplified, web-based project management application inspired by Trello.
 
@@ -23,13 +21,13 @@ The application provides an intuitive interface for users to create boards, list
 
 ## Technologies Used
 
-| Front End                                                             | Back End                                                                        |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [React](https://react.dev/)                                           | [Node](https://nodejs.org/en)| 
-| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Express](https://expressjs.com/) |
-| [Tailwind](https://tailwindcss.com/)                                  | [Firebase](https://firebase.google.com/)                                        |
-| [DaisyUI](https://daisyui.com/)                                       |                                                                                 |
-| [Auth0](https://auth0.com/)|||
+| Front End                                                             | Back End                                 |
+| --------------------------------------------------------------------- | ---------------------------------------- | --- |
+| [React](https://react.dev/)                                           | [Node](https://nodejs.org/en)            |
+| [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | [Express](https://expressjs.com/)        |
+| [Tailwind](https://tailwindcss.com/)                                  | [Firebase](https://firebase.google.com/) |
+| [DaisyUI](https://daisyui.com/)                                       |                                          |
+| [Auth0](https://auth0.com/)                                           |                                          |     |
 
 ## Images
 
