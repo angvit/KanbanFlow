@@ -1,11 +1,11 @@
 <p align="center">
   <br>
-  <img src="frontend\src\pages\Home\KFBanner.png" alt="KanbanFlow Clone" width="200">
+  <img src="frontend\src\pages\Home\KFBanner.png" alt="KanbanFlow" width="200">
 </p>
 
-<h1 align="center">KanbanFlow Clone</h1>
+<h1 align="center">KanbanFlow</h1>
 
-KanbanFlow Clone is a simplified, web-based project management application inspired by Trello.
+KanbanFlow is a simplified, web-based project management application inspired by Trello.
 
 It implements the core functionalities of a Kanban board to allow users to manage their tasks and projects efficiently.
 
